@@ -63,21 +63,22 @@ struct LiveGameCard: View {
             }
             .overlay {
                 HStack {
-                    if (game.status?.short == 2) {
-                        Text("FINISHED").customFont(.footnote2)
-                    }
-                    if (game.status?.short == 3) {
-                        Circle().fill(.red)
+                    switch game.status?.short {
+                        case 1:
+                            Text("SOON").customFont(.footnote2)
+                        case 2:
+                            Circle().fill(.red)
                             .frame(width: 8, height: 8)
                             .overlay {
                                 Circle().fill(.red.opacity(0.5))
                                     .frame(width: 15, height: 15)
                             }
-                        Text("LIVE").customFont(.footnote2)
-                        Text("\(game.periods?.current ?? 0)/4").customFont(.footnote2)
-                    }
-                    if (game.status?.short == 1) {
-                        Text("SOON").customFont(.footnote2)
+                            Text("LIVE").customFont(.footnote2)
+                            Text("\(game.periods?.current ?? 0)/4").customFont(.footnote2)
+                        case 3:
+                            Text("FINAL").customFont(.footnote2)
+                        default:
+                            Text("-")
                     }
                 }
                 .padding(.top, 80)

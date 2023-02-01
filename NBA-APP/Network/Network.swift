@@ -67,26 +67,26 @@ class Network: ObservableObject {
         var dates = Date().getLast7Days().datesAsString
         
         print(games.count)
-//
-//        await withTaskGroup(of: [LiveGame].self) { group in
-//            for date in dates {
-//                group.addTask {
-//                    let gamesPerDate = await self.getGames(date: date)
-//                    return gamesPerDate
-//                }
-//            }
-//            for await gamesPerDate in group {
-//                for game in gamesPerDate { games.append(game) }
-//            }
-//        }
-//
-//        print(games.count)
-//
+
+        await withTaskGroup(of: [LiveGame].self) { group in
+            for date in dates {
+                group.addTask {
+                    let gamesPerDate = await self.getGames(date: date)
+                    return gamesPerDate
+                }
+            }
+            for await gamesPerDate in group {
+                for game in gamesPerDate { games.append(game) }
+            }
+        }
+
+        print(games.count)
+
         return games
     }
 }
 
-
+// OLD WAY
 //    func callApi(urlRequest: URLRequest, completion: @escaping (ApiResponse?) -> ()) {
 //        var apiResponse = ApiResponse()
 //
