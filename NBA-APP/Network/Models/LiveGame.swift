@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 // MARK: - Welcome
 struct LiveGame: Codable {
     let id: Int?
@@ -25,7 +26,7 @@ struct LiveGame: Codable {
 
 // MARK: - Arena
 struct Arena: Codable {
-    let name, city, state, country: JSONNull?
+    let name, city, state, country: String?
 }
 
 // MARK: - DateClass

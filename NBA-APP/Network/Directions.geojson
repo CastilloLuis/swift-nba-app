@@ -1,0 +1,562 @@
+[
+    {
+        "id": 11785,
+        "league": "standard",
+        "season": 2022,
+        "date": {
+            "start": "2023-01-28T00:00:00.000Z",
+            "end": null,
+            "duration": null
+        },
+        "stage": 2,
+        "status": {
+            "clock": null,
+            "halftime": false,
+            "short": 3,
+            "long": "Finished"
+        },
+        "periods": {
+            "current": 4,
+            "total": 4,
+            "endOfPeriod": false
+        },
+        "arena": {
+            "name": null,
+            "city": null,
+            "state": null,
+            "country": null
+        },
+        "teams": {
+            "visitors": {
+                "id": 21,
+                "name": "Milwaukee Bucks",
+                "nickname": "Bucks",
+                "code": "MIL",
+                "logo": "https://upload.wikimedia.org/wikipedia/fr/3/34/Bucks2015.png"
+            },
+            "home": {
+                "id": 15,
+                "name": "Indiana Pacers",
+                "nickname": "Pacers",
+                "code": "IND",
+                "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/c/cf/Pacers_de_l%27Indiana_logo.svg/1180px-Pacers_de_l%27Indiana_logo.svg.png"
+            }
+        },
+        "scores": {
+            "visitors": {
+                "win": 0,
+                "loss": 0,
+                "series": {
+                    "win": 0,
+                    "loss": 0
+                },
+                "linescore": [
+                    "45",
+                    "40",
+                    "29",
+                    "27"
+                ],
+                "points": 141
+            },
+            "home": {
+                "win": 0,
+                "loss": 0,
+                "series": {
+                    "win": 0,
+                    "loss": 0
+                },
+                "linescore": [
+                    "30",
+                    "26",
+                    "43",
+                    "32"
+                ],
+                "points": 131
+            }
+        },
+        "officials": [],
+        "timesTied": null,
+        "leadChanges": null,
+        "nugget": null
+    },
+    {
+        "id": 11786,
+        "league": "standard",
+        "season": 2022,
+        "date": {
+            "start": "2023-01-28T00:30:00.000Z",
+            "end": null,
+            "duration": null
+        },
+        "stage": 2,
+        "status": {
+            "clock": null,
+            "halftime": false,
+            "short": 3,
+            "long": "Finished"
+        },
+        "periods": {
+            "current": 4,
+            "total": 4,
+            "endOfPeriod": false
+        },
+        "arena": {
+            "name": null,
+            "city": null,
+            "state": null,
+            "country": null
+        },
+        "teams": {
+            "visitors": {
+                "id": 19,
+                "name": "Memphis Grizzlies",
+                "nickname": "Grizzlies",
+                "code": "MEM",
+                "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/Memphis_Grizzlies.svg/1200px-Memphis_Grizzlies.svg.png"
+            },
+            "home": {
+                "id": 22,
+                "name": "Minnesota Timberwolves",
+                "nickname": "Timberwolves",
+                "code": "MIN",
+                "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/d/d9/Timberwolves_du_Minnesota_logo_2017.png/200px-Timberwolves_du_Minnesota_logo_2017.png"
+            }
+        },
+        "scores": {
+            "visitors": {
+                "win": 0,
+                "loss": 0,
+                "series": {
+                    "win": 0,
+                    "loss": 0
+                },
+                "linescore": [
+                    "31",
+                    "22",
+                    "24",
+                    "23"
+                ],
+                "points": 100
+            },
+            "home": {
+                "win": 0,
+                "loss": 0,
+                "series": {
+                    "win": 0,
+                    "loss": 0
+                },
+                "linescore": [
+                    "38",
+                    "24",
+                    "25",
+                    "24"
+                ],
+                "points": 111
+            }
+        },
+        "officials": [],
+        "timesTied": null,
+        "leadChanges": null,
+        "nugget": null
+    },
+    {
+        "id": 11787,
+        "league": "standard",
+        "season": 2022,
+        "date": {
+            "start": "2023-01-28T01:00:00.000Z",
+            "end": null,
+            "duration": null
+        },
+        "stage": 2,
+        "status": {
+            "clock": null,
+            "halftime": false,
+            "short": 3,
+            "long": "Finished"
+        },
+        "periods": {
+            "current": 4,
+            "total": 4,
+            "endOfPeriod": false
+        },
+        "arena": {
+            "name": null,
+            "city": null,
+            "state": null,
+            "country": null
+        },
+        "teams": {
+            "visitors": {
+                "id": 26,
+                "name": "Orlando Magic",
+                "nickname": "Magic",
+                "code": "ORL",
+                "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+            },
+            "home": {
+                "id": 20,
+                "name": "Miami Heat",
+                "nickname": "Heat",
+                "code": "MIA",
+                "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/1/1c/Miami_Heat_-_Logo.svg/1200px-Miami_Heat_-_Logo.svg.png"
+            }
+        },
+        "scores": {
+            "visitors": {
+                "win": 0,
+                "loss": 0,
+                "series": {
+                    "win": 0,
+                    "loss": 0
+                },
+                "linescore": [
+                    "31",
+                    "28",
+                    "20",
+                    "26"
+                ],
+                "points": 105
+            },
+            "home": {
+                "win": 0,
+                "loss": 0,
+                "series": {
+                    "win": 0,
+                    "loss": 0
+                },
+                "linescore": [
+                    "26",
+                    "24",
+                    "23",
+                    "37"
+                ],
+                "points": 110
+            }
+        },
+        "officials": [],
+        "timesTied": null,
+        "leadChanges": null,
+        "nugget": null
+    },
+    {
+        "id": 11788,
+        "league": "standard",
+        "season": 2022,
+        "date": {
+            "start": "2023-01-28T01:00:00.000Z",
+            "end": null,
+            "duration": null
+        },
+        "stage": 2,
+        "status": {
+            "clock": null,
+            "halftime": false,
+            "short": 3,
+            "long": "Finished"
+        },
+        "periods": {
+            "current": 4,
+            "total": 4,
+            "endOfPeriod": false
+        },
+        "arena": {
+            "name": null,
+            "city": null,
+            "state": null,
+            "country": null
+        },
+        "teams": {
+            "visitors": {
+                "id": 7,
+                "name": "Cleveland Cavaliers",
+                "nickname": "Cavaliers",
+                "code": "CLE",
+                "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/0/06/Cavs_de_Cleveland_logo_2017.png/150px-Cavs_de_Cleveland_logo_2017.png"
+            },
+            "home": {
+                "id": 25,
+                "name": "Oklahoma City Thunder",
+                "nickname": "Thunder",
+                "code": "OKC",
+                "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/4/4f/Thunder_d%27Oklahoma_City_logo.svg/1200px-Thunder_d%27Oklahoma_City_logo.svg.png"
+            }
+        },
+        "scores": {
+            "visitors": {
+                "win": 0,
+                "loss": 0,
+                "series": {
+                    "win": 0,
+                    "loss": 0
+                },
+                "linescore": [
+                    "25",
+                    "29",
+                    "24",
+                    "22"
+                ],
+                "points": 100
+            },
+            "home": {
+                "win": 0,
+                "loss": 0,
+                "series": {
+                    "win": 0,
+                    "loss": 0
+                },
+                "linescore": [
+                    "27",
+                    "20",
+                    "31",
+                    "34"
+                ],
+                "points": 112
+            }
+        },
+        "officials": [],
+        "timesTied": null,
+        "leadChanges": null,
+        "nugget": null
+    },
+    {
+        "id": 11789,
+        "league": "standard",
+        "season": 2022,
+        "date": {
+            "start": "2023-01-28T03:00:00.000Z",
+            "end": null,
+            "duration": null
+        },
+        "stage": 2,
+        "status": {
+            "clock": null,
+            "halftime": false,
+            "short": 3,
+            "long": "Finished"
+        },
+        "periods": {
+            "current": 4,
+            "total": 4,
+            "endOfPeriod": false
+        },
+        "arena": {
+            "name": null,
+            "city": null,
+            "state": null,
+            "country": null
+        },
+        "teams": {
+            "visitors": {
+                "id": 38,
+                "name": "Toronto Raptors",
+                "nickname": "Raptors",
+                "code": "TOR",
+                "logo": "https://upload.wikimedia.org/wikipedia/fr/8/89/Raptors2015.png"
+            },
+            "home": {
+                "id": 11,
+                "name": "Golden State Warriors",
+                "nickname": "Warriors",
+                "code": "GSW",
+                "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/d/de/Warriors_de_Golden_State_logo.svg/1200px-Warriors_de_Golden_State_logo.svg.png"
+            }
+        },
+        "scores": {
+            "visitors": {
+                "win": 0,
+                "loss": 0,
+                "series": {
+                    "win": 0,
+                    "loss": 0
+                },
+                "linescore": [
+                    "36",
+                    "26",
+                    "32",
+                    "23"
+                ],
+                "points": 117
+            },
+            "home": {
+                "win": 0,
+                "loss": 0,
+                "series": {
+                    "win": 0,
+                    "loss": 0
+                },
+                "linescore": [
+                    "34",
+                    "29",
+                    "35",
+                    "31"
+                ],
+                "points": 129
+            }
+        },
+        "officials": [],
+        "timesTied": null,
+        "leadChanges": null,
+        "nugget": null
+    },
+    {
+        "id": 11790,
+        "league": "standard",
+        "season": 2022,
+        "date": {
+            "start": "2023-01-28T20:00:00.000Z",
+            "end": null,
+            "duration": null
+        },
+        "stage": 2,
+        "status": {
+            "clock": null,
+            "halftime": false,
+            "short": 3,
+            "long": "Finished"
+        },
+        "periods": {
+            "current": 4,
+            "total": 4,
+            "endOfPeriod": false
+        },
+        "arena": {
+            "name": null,
+            "city": null,
+            "state": null,
+            "country": null
+        },
+        "teams": {
+            "visitors": {
+                "id": 9,
+                "name": "Denver Nuggets",
+                "nickname": "Nuggets",
+                "code": "DEN",
+                "logo": "https://upload.wikimedia.org/wikipedia/fr/thumb/3/35/Nuggets_de_Denver_2018.png/180px-Nuggets_de_Denver_2018.png"
+            },
+            "home": {
+                "id": 27,
+                "name": "Philadelphia 76ers",
+                "nickname": "76ers",
+                "code": "PHI",
+                "logo": "https://upload.wikimedia.org/wikipedia/fr/4/48/76ers_2016.png"
+            }
+        },
+        "scores": {
+            "visitors": {
+                "win": 0,
+                "loss": 0,
+                "series": {
+                    "win": 0,
+                    "loss": 0
+                },
+                "linescore": [
+                    "38",
+                    "35",
+                    "26",
+                    "20"
+                ],
+                "points": 119
+            },
+            "home": {
+                "win": 0,
+                "loss": 0,
+                "series": {
+                    "win": 0,
+                    "loss": 0
+                },
+                "linescore": [
+                    "29",
+                    "29",
+                    "38",
+                    "30"
+                ],
+                "points": 126
+            }
+        },
+        "officials": [],
+        "timesTied": null,
+        "leadChanges": null,
+        "nugget": null
+    },
+    {
+        "id": 11791,
+        "league": "standard",
+        "season": 2022,
+        "date": {
+            "start": "2023-01-28T22:30:00.000Z",
+            "end": null,
+            "duration": null
+        },
+        "stage": 2,
+        "status": {
+            "clock": null,
+            "halftime": false,
+            "short": 3,
+            "long": "Finished"
+        },
+        "periods": {
+            "current": 4,
+            "total": 4,
+            "endOfPeriod": false
+        },
+        "arena": {
+            "name": null,
+            "city": null,
+            "state": null,
+            "country": null
+        },
+        "teams": {
+            "visitors": {
+                "id": 24,
+                "name": "New York Knicks",
+                "nickname": "Knicks",
+                "code": "NYK",
+                "logo": "https://upload.wikimedia.org/wikipedia/fr/3/34/Knicks_de_NY.png"
+            },
+            "home": {
+                "id": 4,
+                "name": "Brooklyn Nets",
+                "nickname": "Nets",
+                "code": "BKN",
+                "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Brooklyn_Nets_newlogo.svg/130px-Brooklyn_Nets_newlogo.svg.png"
+            }
+        },
+        "scores": {
+            "visitors": {
+                "win": 0,
+                "loss": 0,
+                "series": {
+                    "win": 0,
+                    "loss": 0
+                },
+                "linescore": [
+                    "22",
+                    "27",
+                    "32",
+                    "34"
+                ],
+                "points": 115
+            },
+            "home": {
+                "win": 0,
+                "loss": 0,
+                "series": {
+                    "win": 0,
+                    "loss": 0
+                },
+                "linescore": [
+                    "28",
+                    "34",
+                    "26",
+                    "34"
+                ],
+                "points": 122
+            }
+        },
+        "officials": [],
+        "timesTied": null,
+        "leadChanges": null,
+        "nugget": null
+    }
+]

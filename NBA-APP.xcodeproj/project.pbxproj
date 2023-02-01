@@ -23,6 +23,9 @@
 		DE113B36298958CD001F6BA3 /* LiveGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113B35298958CD001F6BA3 /* LiveGame.swift */; };
 		DE113B3829895931001F6BA3 /* JSONAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113B3729895931001F6BA3 /* JSONAny.swift */; };
 		DE113B3A29899A6D001F6BA3 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113B3929899A6D001F6BA3 /* ApiResponse.swift */; };
+		DE1C4D61298AA85700EF9D70 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C4D60298AA85700EF9D70 /* Extensions.swift */; };
+		DE1C4D63298AAF6E00EF9D70 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C4D62298AAF6E00EF9D70 /* Mock.swift */; };
+		DED4E847298AC77A002C542A /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = DED4E846298AC77A002C542A /* MockData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		DE113B35298958CD001F6BA3 /* LiveGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveGame.swift; sourceTree = "<group>"; };
 		DE113B3729895931001F6BA3 /* JSONAny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAny.swift; sourceTree = "<group>"; };
 		DE113B3929899A6D001F6BA3 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		DE1C4D60298AA85700EF9D70 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DE1C4D62298AAF6E00EF9D70 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		DED4E846298AC77A002C542A /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 				DE113B0F29888C17001F6BA3 /* NBA_APPApp.swift */,
 				DE113B1129888C17001F6BA3 /* ContentView.swift */,
 				DE113B2A29893F1C001F6BA3 /* CustomFont.swift */,
+				DE1C4D60298AA85700EF9D70 /* Extensions.swift */,
 				DE113B3129894D32001F6BA3 /* Network */,
 				DE113B2C29894720001F6BA3 /* Components */,
 				DE113B2229893EB5001F6BA3 /* Fonts */,
@@ -131,6 +138,8 @@
 			children = (
 				DE113B34298958C1001F6BA3 /* Models */,
 				DE113B3229894D45001F6BA3 /* Network.swift */,
+				DE1C4D62298AAF6E00EF9D70 /* Mock.swift */,
+				DED4E846298AC77A002C542A /* MockData.json */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -208,6 +217,7 @@
 				DE113B1429888C18001F6BA3 /* Assets.xcassets in Resources */,
 				DE113B2829893EB5001F6BA3 /* Inter-SemiBold.ttf in Resources */,
 				DE113B2729893EB5001F6BA3 /* Poppins-Bold.ttf in Resources */,
+				DED4E847298AC77A002C542A /* MockData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,9 +235,11 @@
 				DE113B2E29894737001F6BA3 /* RecentGameCard.swift in Sources */,
 				DE113B36298958CD001F6BA3 /* LiveGame.swift in Sources */,
 				DE113B3029894B5E001F6BA3 /* LiveGameCard.swift in Sources */,
+				DE1C4D61298AA85700EF9D70 /* Extensions.swift in Sources */,
 				DE113B2129893D8E001F6BA3 /* HomeView.swift in Sources */,
 				DE113B1229888C17001F6BA3 /* ContentView.swift in Sources */,
 				DE113B3829895931001F6BA3 /* JSONAny.swift in Sources */,
+				DE1C4D63298AAF6E00EF9D70 /* Mock.swift in Sources */,
 				DE113B1029888C17001F6BA3 /* NBA_APPApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

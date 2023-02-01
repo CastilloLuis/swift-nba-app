@@ -8,44 +8,93 @@
 import SwiftUI
 
 struct LiveGameCard: View {
-    var game: Any
+    var game: LiveGame
+    var testLogo: String = "https://upload.wikimedia.org/wikipedia/fr/thumb/f/f3/Hornets_de_Charlotte_logo.svg/1200px-Hornets_de_Charlotte_logo.svg.png"
     
     var body: some View {
         VStack {
             HStack {
-                HStack {
-                    AsyncImage(url: URL(string: "https://upload.wikimedia.org/wikipedia/fr/thumb/f/f3/Hornets_de_Charlotte_logo.svg/1200px-Hornets_de_Charlotte_logo.svg.png")) { image in
-                        image.resizable()
-                            .frame(maxWidth: 40, maxHeight: 40)
-                    } placeholder: {
-                        //put your placeholder here
-                    }
-                    Text("100").font(
+                VStack {
+                    Text(game.teams?.home.nickname ?? "-")
+                        .customFont(.footnote)
+                    Text("\(game.scores?.home.points ?? 0)").font(
                         .custom("Poppins Bold", size: 40)
                     )
                 }
-                Divider()
-                HStack {
-                    AsyncImage(url: URL(string: "https://upload.wikimedia.org/wikipedia/fr/thumb/f/f3/Hornets_de_Charlotte_logo.svg/1200px-Hornets_de_Charlotte_logo.svg.png")) { image in
-                        image.resizable()
-                            .frame(maxWidth: 40, maxHeight: 40)
-                    } placeholder: {
-                        //put your placeholder here
+                .overlay {
+                    VStack {
+                        AsyncImage(url: URL(string: game.teams?.home.logo ?? testLogo)) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                            
+                        } placeholder: {
+                            //put your placeholder here
+                        }
                     }
-                    Text("100").font(
+                    .frame(width: 120, height: 120)
+                    .position(x: -65, y: 40)
+                }
+                
+                Text("vs")
+                    .padding(.top, 10)
+                    .opacity(0.7)
+                
+                VStack {
+                    Text(game.teams?.visitors.nickname ?? "-")
+                        .customFont(.footnote)
+                    Text("\(game.scores?.visitors.points ?? 0)").font(
                         .custom("Poppins Bold", size: 40)
                     )
+                }
+                .overlay {
+                    VStack {
+                        AsyncImage(url: URL(string: game.teams?.visitors.logo ?? testLogo)) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
+                        } placeholder: {
+                            //put your placeholder here
+                        }
+                    }
+                    .frame(width: 120, height: 120)
+                    .position(x: 125, y: 40)
                 }
             }
-            HStack {
-                Text("LIVE").customFont(.footnote2)
-                Text("1/4").customFont(.footnote2)
+            .overlay {
+                HStack {
+                    if (game.status?.short == 2) {
+                        Text("FINISHED").customFont(.footnote2)
+                    }
+                    if (game.status?.short == 3) {
+                        Circle().fill(.red)
+                            .frame(width: 8, height: 8)
+                            .overlay {
+                                Circle().fill(.red.opacity(0.5))
+                                    .frame(width: 15, height: 15)
+                            }
+                        Text("LIVE").customFont(.footnote2)
+                        Text("\(game.periods?.current ?? 0)/4").customFont(.footnote2)
+                    }
+                    if (game.status?.short == 1) {
+                        Text("SOON").customFont(.footnote2)
+                    }
+                }
+                .padding(.top, 80)
             }
         }
-        .padding(20)
-        .frame(width: 300, height: 100)
+        .frame(width: 330, height: 120)
         .background(
-            .linearGradient(colors: [.red, .yellow], startPoint: .top, endPoint: .bottom)
+            Image("stadium")
+                .resizable()
+                .frame(maxWidth: .infinity)
+                .overlay {
+                    Rectangle()
+                        .fill(
+                            .linearGradient(colors: [Color(hex: "8e9eab"), Color(hex: "eef2f3")], startPoint: .top, endPoint: .bottom)
+                        )
+                        .opacity(0.9)
+                }
         )
         .mask(
             RoundedRectangle(cornerRadius: 25, style: .continuous)
@@ -55,7 +104,6 @@ struct LiveGameCard: View {
 
 struct LiveGameCard_Previews: PreviewProvider {
     static var previews: some View {
-        let testGame = {}
-        LiveGameCard(game: testGame)
+        LiveGameCard(game: getMockGames()[0])
     }
 }

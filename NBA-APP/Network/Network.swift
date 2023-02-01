@@ -8,11 +8,6 @@
 import SwiftUI
 import Foundation
 
-struct ApiResponse {
-    var isSuccess : Bool = false
-    var returnedData : Any = {}
-}
-
 class Network: ObservableObject {
     let API_URL = "https://api-nba-v1.p.rapidapi.com"
     
@@ -65,6 +60,29 @@ class Network: ObservableObject {
         }
         
         return finalResponse
+    }
+    
+    func getLastWeekHistoryGames() async -> [LiveGame] {
+        var games = [LiveGame]()
+        var dates = Date().getLast7Days().datesAsString
+        
+        print(games.count)
+//
+//        await withTaskGroup(of: [LiveGame].self) { group in
+//            for date in dates {
+//                group.addTask {
+//                    let gamesPerDate = await self.getGames(date: date)
+//                    return gamesPerDate
+//                }
+//            }
+//            for await gamesPerDate in group {
+//                for game in gamesPerDate { games.append(game) }
+//            }
+//        }
+//
+//        print(games.count)
+//
+        return games
     }
 }
 
