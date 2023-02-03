@@ -1,0 +1,1446 @@
+[
+    {
+      "player": {
+        "id": 734,
+        "firstname": "Dwayne",
+        "lastname": "Bacon"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 14,
+      "pos": "SF",
+      "min": "21:56",
+      "fgm": 6,
+      "fga": 9,
+      "fgp": "66.7",
+      "ftm": 1,
+      "fta": 1,
+      "ftp": "100",
+      "tpm": 1,
+      "tpa": 3,
+      "tpp": "33.3",
+      "offReb": 0,
+      "defReb": 2,
+      "totReb": 2,
+      "assists": 1,
+      "pFouls": 1,
+      "steals": 2,
+      "turnovers": 1,
+      "blocks": 0,
+      "plusMinus": "6",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 195,
+        "firstname": "Aaron",
+        "lastname": "Gordon"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 12,
+      "pos": "PF",
+      "min": "16:19",
+      "fgm": 4,
+      "fga": 7,
+      "fgp": "57.1",
+      "ftm": 3,
+      "fta": 3,
+      "ftp": "100",
+      "tpm": 1,
+      "tpa": 2,
+      "tpp": "50.0",
+      "offReb": 1,
+      "defReb": 2,
+      "totReb": 3,
+      "assists": 6,
+      "pFouls": 0,
+      "steals": 0,
+      "turnovers": 0,
+      "blocks": 0,
+      "plusMinus": "11",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 534,
+        "firstname": "Nikola",
+        "lastname": "Vucevic"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 18,
+      "pos": "C",
+      "min": "25:20",
+      "fgm": 8,
+      "fga": 14,
+      "fgp": "57.1",
+      "ftm": 0,
+      "fta": 1,
+      "ftp": "0.0",
+      "tpm": 2,
+      "tpa": 7,
+      "tpp": "28.6",
+      "offReb": 1,
+      "defReb": 10,
+      "totReb": 11,
+      "assists": 4,
+      "pFouls": 2,
+      "steals": 1,
+      "turnovers": 1,
+      "blocks": 1,
+      "plusMinus": "25",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 177,
+        "firstname": "Evan",
+        "lastname": "Fournier"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 13,
+      "pos": "SG",
+      "min": "24:51",
+      "fgm": 5,
+      "fga": 9,
+      "fgp": "55.6",
+      "ftm": 1,
+      "fta": 1,
+      "ftp": "100",
+      "tpm": 2,
+      "tpa": 5,
+      "tpp": "40.0",
+      "offReb": 0,
+      "defReb": 1,
+      "totReb": 1,
+      "assists": 2,
+      "pFouls": 2,
+      "steals": 2,
+      "turnovers": 1,
+      "blocks": 1,
+      "plusMinus": "22",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 779,
+        "firstname": "Markelle",
+        "lastname": "Fultz"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 10,
+      "pos": "PG",
+      "min": "25:26",
+      "fgm": 4,
+      "fga": 7,
+      "fgp": "57.1",
+      "ftm": 1,
+      "fta": 2,
+      "ftp": "50.0",
+      "tpm": 1,
+      "tpa": 3,
+      "tpp": "33.3",
+      "offReb": 0,
+      "defReb": 3,
+      "totReb": 3,
+      "assists": 4,
+      "pFouls": 3,
+      "steals": 1,
+      "turnovers": 4,
+      "blocks": 0,
+      "plusMinus": "21",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 12,
+        "firstname": "Al-Farouq",
+        "lastname": "Aminu"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": null,
+      "pos": null,
+      "min": null,
+      "fgm": null,
+      "fga": null,
+      "fgp": null,
+      "ftm": null,
+      "fta": null,
+      "ftp": null,
+      "tpm": null,
+      "tpa": null,
+      "tpp": null,
+      "offReb": null,
+      "defReb": null,
+      "totReb": null,
+      "assists": null,
+      "pFouls": null,
+      "steals": null,
+      "turnovers": null,
+      "blocks": null,
+      "plusMinus": null,
+      "comment": "DND - Injury / Illness"
+    },
+    {
+      "player": {
+        "id": 2563,
+        "firstname": "Cole",
+        "lastname": "Anthony"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 7,
+      "pos": null,
+      "min": "19:59",
+      "fgm": 3,
+      "fga": 10,
+      "fgp": "30.0",
+      "ftm": 0,
+      "fta": 0,
+      "ftp": "0.0",
+      "tpm": 1,
+      "tpa": 4,
+      "tpp": "25.0",
+      "offReb": 0,
+      "defReb": 1,
+      "totReb": 1,
+      "assists": 3,
+      "pFouls": 5,
+      "steals": 1,
+      "turnovers": 3,
+      "blocks": 0,
+      "plusMinus": "-20",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 932,
+        "firstname": "Mo",
+        "lastname": "Bamba"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": null,
+      "pos": null,
+      "min": null,
+      "fgm": null,
+      "fga": null,
+      "fgp": null,
+      "ftm": null,
+      "fta": null,
+      "ftp": null,
+      "tpm": null,
+      "tpa": null,
+      "tpp": null,
+      "offReb": null,
+      "defReb": null,
+      "totReb": null,
+      "assists": null,
+      "pFouls": null,
+      "steals": null,
+      "turnovers": null,
+      "blocks": null,
+      "plusMinus": null,
+      "comment": "DND - Injury / Illness"
+    },
+    {
+      "player": {
+        "id": 739,
+        "firstname": "Khem",
+        "lastname": "Birch"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 8,
+      "pos": null,
+      "min": "17:56",
+      "fgm": 3,
+      "fga": 4,
+      "fgp": "75.0",
+      "ftm": 2,
+      "fta": 3,
+      "ftp": "66.7",
+      "tpm": 0,
+      "tpa": 0,
+      "tpp": "0.0",
+      "offReb": 3,
+      "defReb": 5,
+      "totReb": 8,
+      "assists": 0,
+      "pFouls": 3,
+      "steals": 1,
+      "turnovers": 2,
+      "blocks": 1,
+      "plusMinus": "-23",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 1850,
+        "firstname": "Jordan",
+        "lastname": "Bone"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 5,
+      "pos": null,
+      "min": "5:43",
+      "fgm": 1,
+      "fga": 3,
+      "fgp": "33.3",
+      "ftm": 2,
+      "fta": 2,
+      "ftp": "100",
+      "tpm": 1,
+      "tpa": 2,
+      "tpp": "50.0",
+      "offReb": 0,
+      "defReb": 2,
+      "totReb": 2,
+      "assists": 1,
+      "pFouls": 0,
+      "steals": 0,
+      "turnovers": 0,
+      "blocks": 0,
+      "plusMinus": "0",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 2532,
+        "firstname": "Devin",
+        "lastname": "Cannady"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 3,
+      "pos": null,
+      "min": "7:07",
+      "fgm": 1,
+      "fga": 3,
+      "fgp": "33.3",
+      "ftm": 0,
+      "fta": 0,
+      "ftp": "0.0",
+      "tpm": 1,
+      "tpa": 2,
+      "tpp": "50.0",
+      "offReb": 0,
+      "defReb": 1,
+      "totReb": 1,
+      "assists": 1,
+      "pFouls": 1,
+      "steals": 0,
+      "turnovers": 0,
+      "blocks": 1,
+      "plusMinus": "-8",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 95,
+        "firstname": "Michael",
+        "lastname": "Carter-Williams"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 10,
+      "pos": null,
+      "min": "24:55",
+      "fgm": 4,
+      "fga": 13,
+      "fgp": "30.8",
+      "ftm": 2,
+      "fta": 4,
+      "ftp": "50.0",
+      "tpm": 0,
+      "tpa": 4,
+      "tpp": "0.0",
+      "offReb": 2,
+      "defReb": 3,
+      "totReb": 5,
+      "assists": 3,
+      "pFouls": 2,
+      "steals": 0,
+      "turnovers": 1,
+      "blocks": 2,
+      "plusMinus": "-12",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 953,
+        "firstname": "Gary",
+        "lastname": "Clark"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 2,
+      "pos": null,
+      "min": "17:35",
+      "fgm": 0,
+      "fga": 2,
+      "fgp": "0.0",
+      "ftm": 2,
+      "fta": 2,
+      "ftp": "100",
+      "tpm": 0,
+      "tpa": 2,
+      "tpp": "0.0",
+      "offReb": 0,
+      "defReb": 3,
+      "totReb": 3,
+      "assists": 0,
+      "pFouls": 2,
+      "steals": 0,
+      "turnovers": 1,
+      "blocks": 1,
+      "plusMinus": "1",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 160,
+        "firstname": "James",
+        "lastname": "Ennis III"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": null,
+      "pos": null,
+      "min": null,
+      "fgm": null,
+      "fga": null,
+      "fgp": null,
+      "ftm": null,
+      "fta": null,
+      "ftp": null,
+      "tpm": null,
+      "tpa": null,
+      "tpp": null,
+      "offReb": null,
+      "defReb": null,
+      "totReb": null,
+      "assists": null,
+      "pFouls": null,
+      "steals": null,
+      "turnovers": null,
+      "blocks": null,
+      "plusMinus": null,
+      "comment": "DNP - Injury / Illness"
+    },
+    {
+      "player": {
+        "id": 2011,
+        "firstname": "Robert",
+        "lastname": "Franks"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 5,
+      "pos": null,
+      "min": "7:46",
+      "fgm": 0,
+      "fga": 2,
+      "fgp": "0.0",
+      "ftm": 5,
+      "fta": 8,
+      "ftp": "62.5",
+      "tpm": 0,
+      "tpa": 2,
+      "tpp": "0.0",
+      "offReb": 0,
+      "defReb": 0,
+      "totReb": 0,
+      "assists": 0,
+      "pFouls": 3,
+      "steals": 1,
+      "turnovers": 0,
+      "blocks": 0,
+      "plusMinus": "2",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 801,
+        "firstname": "Jonathan",
+        "lastname": "Isaac"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": null,
+      "pos": null,
+      "min": null,
+      "fgm": null,
+      "fga": null,
+      "fgp": null,
+      "ftm": null,
+      "fta": null,
+      "ftp": null,
+      "tpm": null,
+      "tpa": null,
+      "tpp": null,
+      "offReb": null,
+      "defReb": null,
+      "totReb": null,
+      "assists": null,
+      "pFouls": null,
+      "steals": null,
+      "turnovers": null,
+      "blocks": null,
+      "plusMinus": null,
+      "comment": "DND - Injury / Illness"
+    },
+    {
+      "player": {
+        "id": 2615,
+        "firstname": "Karim",
+        "lastname": "Mane"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 0,
+      "pos": null,
+      "min": "6:17",
+      "fgm": 0,
+      "fga": 1,
+      "fgp": "0.0",
+      "ftm": 0,
+      "fta": 0,
+      "ftp": "0.0",
+      "tpm": 0,
+      "tpa": 1,
+      "tpp": "0.0",
+      "offReb": 0,
+      "defReb": 2,
+      "totReb": 2,
+      "assists": 0,
+      "pFouls": 0,
+      "steals": 1,
+      "turnovers": 0,
+      "blocks": 0,
+      "plusMinus": "1",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 1883,
+        "firstname": "Chuma",
+        "lastname": "Okeke"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 9,
+      "pos": null,
+      "min": "14:06",
+      "fgm": 3,
+      "fga": 8,
+      "fgp": "37.5",
+      "ftm": 1,
+      "fta": 2,
+      "ftp": "50.0",
+      "tpm": 2,
+      "tpa": 5,
+      "tpp": "40.0",
+      "offReb": 1,
+      "defReb": 2,
+      "totReb": 3,
+      "assists": 1,
+      "pFouls": 3,
+      "steals": 0,
+      "turnovers": 1,
+      "blocks": 1,
+      "plusMinus": "-8",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 457,
+        "firstname": "Terrence",
+        "lastname": "Ross"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": null,
+      "pos": null,
+      "min": null,
+      "fgm": null,
+      "fga": null,
+      "fgp": null,
+      "ftm": null,
+      "fta": null,
+      "ftp": null,
+      "tpm": null,
+      "tpa": null,
+      "tpp": null,
+      "offReb": null,
+      "defReb": null,
+      "totReb": null,
+      "assists": null,
+      "pFouls": null,
+      "steals": null,
+      "turnovers": null,
+      "blocks": null,
+      "plusMinus": null,
+      "comment": "DND - Injury / Illness"
+    },
+    {
+      "player": {
+        "id": 2653,
+        "firstname": "Jon",
+        "lastname": "Teske"
+      },
+      "team": {
+        "id": 26,
+        "name": "Orlando Magic",
+        "nickname": "Magic",
+        "code": "ORL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/b/bd/Orlando_Magic_logo_2010.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 0,
+      "pos": null,
+      "min": "4:44",
+      "fgm": 0,
+      "fga": 0,
+      "fgp": "0.0",
+      "ftm": 0,
+      "fta": 0,
+      "ftp": "0.0",
+      "tpm": 0,
+      "tpa": 0,
+      "tpp": "0.0",
+      "offReb": 2,
+      "defReb": 2,
+      "totReb": 4,
+      "assists": 0,
+      "pFouls": 1,
+      "steals": 0,
+      "turnovers": 0,
+      "blocks": 0,
+      "plusMinus": "2",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 1868,
+        "firstname": "De'Andre",
+        "lastname": "Hunter"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 18,
+      "pos": "SF",
+      "min": "26:07",
+      "fgm": 5,
+      "fga": 10,
+      "fgp": "50.0",
+      "ftm": 6,
+      "fta": 8,
+      "ftp": "75.0",
+      "tpm": 2,
+      "tpa": 5,
+      "tpp": "40.0",
+      "offReb": 1,
+      "defReb": 2,
+      "totReb": 3,
+      "assists": 0,
+      "pFouls": 3,
+      "steals": 0,
+      "turnovers": 1,
+      "blocks": 1,
+      "plusMinus": "-9",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 761,
+        "firstname": "John",
+        "lastname": "Collins"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 14,
+      "pos": "PF",
+      "min": "22:09",
+      "fgm": 4,
+      "fga": 6,
+      "fgp": "66.7",
+      "ftm": 5,
+      "fta": 6,
+      "ftp": "83.3",
+      "tpm": 1,
+      "tpa": 1,
+      "tpp": "100",
+      "offReb": 4,
+      "defReb": 5,
+      "totReb": 9,
+      "assists": 1,
+      "pFouls": 4,
+      "steals": 2,
+      "turnovers": 4,
+      "blocks": 1,
+      "plusMinus": "-4",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 92,
+        "firstname": "Clint",
+        "lastname": "Capela"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 8,
+      "pos": "C",
+      "min": "20:05",
+      "fgm": 4,
+      "fga": 6,
+      "fgp": "66.7",
+      "ftm": 0,
+      "fta": 1,
+      "ftp": "0.0",
+      "tpm": 0,
+      "tpa": 0,
+      "tpp": "0.0",
+      "offReb": 5,
+      "defReb": 9,
+      "totReb": 14,
+      "assists": 0,
+      "pFouls": 0,
+      "steals": 0,
+      "turnovers": 2,
+      "blocks": 0,
+      "plusMinus": "-5",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 743,
+        "firstname": "Bogdan",
+        "lastname": "Bogdanovic"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 9,
+      "pos": "SG",
+      "min": "23:18",
+      "fgm": 3,
+      "fga": 10,
+      "fgp": "30.0",
+      "ftm": 2,
+      "fta": 2,
+      "ftp": "100",
+      "tpm": 1,
+      "tpa": 5,
+      "tpp": "20.0",
+      "offReb": 1,
+      "defReb": 3,
+      "totReb": 4,
+      "assists": 2,
+      "pFouls": 0,
+      "steals": 1,
+      "turnovers": 1,
+      "blocks": 0,
+      "plusMinus": "10",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 1046,
+        "firstname": "Trae",
+        "lastname": "Young"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 7,
+      "pos": "PG",
+      "min": "22:10",
+      "fgm": 2,
+      "fga": 9,
+      "fgp": "22.2",
+      "ftm": 3,
+      "fta": 4,
+      "ftp": "75.0",
+      "tpm": 0,
+      "tpa": 2,
+      "tpp": "0.0",
+      "offReb": 1,
+      "defReb": 1,
+      "totReb": 2,
+      "assists": 6,
+      "pFouls": 2,
+      "steals": 1,
+      "turnovers": 6,
+      "blocks": 0,
+      "plusMinus": "-10",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 152,
+        "firstname": "Kris",
+        "lastname": "Dunn"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": null,
+      "pos": null,
+      "min": null,
+      "fgm": null,
+      "fga": null,
+      "fgp": null,
+      "ftm": null,
+      "fta": null,
+      "ftp": null,
+      "tpm": null,
+      "tpa": null,
+      "tpp": null,
+      "offReb": null,
+      "defReb": null,
+      "totReb": null,
+      "assists": null,
+      "pFouls": null,
+      "steals": null,
+      "turnovers": null,
+      "blocks": null,
+      "plusMinus": null,
+      "comment": "DND - Injury / Illness"
+    },
+    {
+      "player": {
+        "id": 1858,
+        "firstname": "Bruno",
+        "lastname": "Fernando"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 8,
+      "pos": null,
+      "min": "17:15",
+      "fgm": 2,
+      "fga": 7,
+      "fgp": "28.6",
+      "ftm": 4,
+      "fta": 4,
+      "ftp": "100",
+      "tpm": 0,
+      "tpa": 0,
+      "tpp": "0.0",
+      "offReb": 2,
+      "defReb": 7,
+      "totReb": 9,
+      "assists": 0,
+      "pFouls": 4,
+      "steals": 0,
+      "turnovers": 0,
+      "blocks": 0,
+      "plusMinus": "-10",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 181,
+        "firstname": "Danilo",
+        "lastname": "Gallinari"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 14,
+      "pos": null,
+      "min": "20:15",
+      "fgm": 3,
+      "fga": 7,
+      "fgp": "42.9",
+      "ftm": 7,
+      "fta": 8,
+      "ftp": "87.5",
+      "tpm": 1,
+      "tpa": 5,
+      "tpp": "20.0",
+      "offReb": 0,
+      "defReb": 4,
+      "totReb": 4,
+      "assists": 0,
+      "pFouls": 2,
+      "steals": 1,
+      "turnovers": 0,
+      "blocks": 1,
+      "plusMinus": "14",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 1063,
+        "firstname": "Brandon",
+        "lastname": "Goodwin"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 7,
+      "pos": null,
+      "min": "17:58",
+      "fgm": 3,
+      "fga": 10,
+      "fgp": "30.0",
+      "ftm": 0,
+      "fta": 0,
+      "ftp": "0.0",
+      "tpm": 1,
+      "tpa": 3,
+      "tpp": "33.3",
+      "offReb": 1,
+      "defReb": 1,
+      "totReb": 2,
+      "assists": 3,
+      "pFouls": 1,
+      "steals": 0,
+      "turnovers": 2,
+      "blocks": 0,
+      "plusMinus": "-4",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 239,
+        "firstname": "Solomon",
+        "lastname": "Hill"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 3,
+      "pos": null,
+      "min": "15:06",
+      "fgm": 1,
+      "fga": 2,
+      "fgp": "50.0",
+      "ftm": 0,
+      "fta": 0,
+      "ftp": "0.0",
+      "tpm": 1,
+      "tpa": 2,
+      "tpp": "50.0",
+      "offReb": 0,
+      "defReb": 1,
+      "totReb": 1,
+      "assists": 1,
+      "pFouls": 2,
+      "steals": 1,
+      "turnovers": 0,
+      "blocks": 0,
+      "plusMinus": "-3",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 980,
+        "firstname": "Kevin",
+        "lastname": "Huerter"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 8,
+      "pos": null,
+      "min": "21:24",
+      "fgm": 3,
+      "fga": 11,
+      "fgp": "27.3",
+      "ftm": 0,
+      "fta": 0,
+      "ftp": "0.0",
+      "tpm": 2,
+      "tpa": 5,
+      "tpp": "40.0",
+      "offReb": 1,
+      "defReb": 0,
+      "totReb": 1,
+      "assists": 3,
+      "pFouls": 2,
+      "steals": 1,
+      "turnovers": 1,
+      "blocks": 1,
+      "plusMinus": "5",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 2607,
+        "firstname": "Nathan",
+        "lastname": "Knight"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 0,
+      "pos": null,
+      "min": "5:43",
+      "fgm": 0,
+      "fga": 1,
+      "fgp": "0.0",
+      "ftm": 0,
+      "fta": 0,
+      "ftp": "0.0",
+      "tpm": 0,
+      "tpa": 0,
+      "tpp": "0.0",
+      "offReb": 1,
+      "defReb": 2,
+      "totReb": 3,
+      "assists": 0,
+      "pFouls": 2,
+      "steals": 0,
+      "turnovers": 0,
+      "blocks": 0,
+      "plusMinus": "0",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 2620,
+        "firstname": "Skylar",
+        "lastname": "Mays"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 3,
+      "pos": null,
+      "min": "5:30",
+      "fgm": 0,
+      "fga": 3,
+      "fgp": "0.0",
+      "ftm": 3,
+      "fta": 4,
+      "ftp": "75.0",
+      "tpm": 0,
+      "tpa": 1,
+      "tpp": "0.0",
+      "offReb": 1,
+      "defReb": 0,
+      "totReb": 1,
+      "assists": 1,
+      "pFouls": 1,
+      "steals": 0,
+      "turnovers": 0,
+      "blocks": 0,
+      "plusMinus": "-2",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 2629,
+        "firstname": "Onyeka",
+        "lastname": "Okongwu"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": null,
+      "pos": null,
+      "min": null,
+      "fgm": null,
+      "fga": null,
+      "fgp": null,
+      "ftm": null,
+      "fta": null,
+      "ftp": null,
+      "tpm": null,
+      "tpa": null,
+      "tpp": null,
+      "offReb": null,
+      "defReb": null,
+      "totReb": null,
+      "assists": null,
+      "pFouls": null,
+      "steals": null,
+      "turnovers": null,
+      "blocks": null,
+      "plusMinus": null,
+      "comment": "DND - Injury / Illness"
+    },
+    {
+      "player": {
+        "id": 1889,
+        "firstname": "Cam",
+        "lastname": "Reddish"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": 13,
+      "pos": null,
+      "min": "22:58",
+      "fgm": 4,
+      "fga": 10,
+      "fgp": "40.0",
+      "ftm": 4,
+      "fta": 4,
+      "ftp": "100",
+      "tpm": 1,
+      "tpa": 3,
+      "tpp": "33.3",
+      "offReb": 1,
+      "defReb": 7,
+      "totReb": 8,
+      "assists": 3,
+      "pFouls": 2,
+      "steals": 1,
+      "turnovers": 6,
+      "blocks": 0,
+      "plusMinus": "-2",
+      "comment": null
+    },
+    {
+      "player": {
+        "id": 455,
+        "firstname": "Rajon",
+        "lastname": "Rondo"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": null,
+      "pos": null,
+      "min": null,
+      "fgm": null,
+      "fga": null,
+      "fgp": null,
+      "ftm": null,
+      "fta": null,
+      "ftp": null,
+      "tpm": null,
+      "tpa": null,
+      "tpp": null,
+      "offReb": null,
+      "defReb": null,
+      "totReb": null,
+      "assists": null,
+      "pFouls": null,
+      "steals": null,
+      "turnovers": null,
+      "blocks": null,
+      "plusMinus": null,
+      "comment": "DND - Injury / Illness"
+    },
+    {
+      "player": {
+        "id": 492,
+        "firstname": "Tony",
+        "lastname": "Snell"
+      },
+      "team": {
+        "id": 1,
+        "name": "Atlanta Hawks",
+        "nickname": "Hawks",
+        "code": "ATL",
+        "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png"
+      },
+      "game": {
+        "id": 8133
+      },
+      "points": null,
+      "pos": null,
+      "min": null,
+      "fgm": null,
+      "fga": null,
+      "fgp": null,
+      "ftm": null,
+      "fta": null,
+      "ftp": null,
+      "tpm": null,
+      "tpa": null,
+      "tpp": null,
+      "offReb": null,
+      "defReb": null,
+      "totReb": null,
+      "assists": null,
+      "pFouls": null,
+      "steals": null,
+      "turnovers": null,
+      "blocks": null,
+      "plusMinus": null,
+      "comment": "NWT - Injury / Illness"
+    }
+  ]
+

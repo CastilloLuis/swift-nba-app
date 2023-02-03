@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LiveGameCard: View {
+    var statsViewOpened: Bool
     var game: LiveGame
     var testLogo: String = "https://upload.wikimedia.org/wikipedia/fr/thumb/f/f3/Hornets_de_Charlotte_logo.svg/1200px-Hornets_de_Charlotte_logo.svg.png"
     
@@ -32,7 +33,7 @@ struct LiveGameCard: View {
                             //put your placeholder here
                         }
                     }
-                    .frame(width: 120, height: 120)
+                    .frame(width: statsViewOpened ? 80 : 120, height: statsViewOpened ? 80 : 120)
                     .position(x: -65, y: 40)
                 }
                 
@@ -57,7 +58,7 @@ struct LiveGameCard: View {
                             //put your placeholder here
                         }
                     }
-                    .frame(width: 120, height: 120)
+                    .frame(width: statsViewOpened ? 80 : 120, height: statsViewOpened ? 80 : 120)
                     .position(x: 125, y: 40)
                 }
             }
@@ -84,7 +85,9 @@ struct LiveGameCard: View {
                 .padding(.top, 80)
             }
         }
-        .frame(width: 330, height: 120)
+        .modifier(
+            CustomFrameModifier(open: statsViewOpened, width: statsViewOpened ? .infinity : 330, height: statsViewOpened ? 250 : 120)
+        )
         .background(
             Image("stadium")
                 .resizable()
@@ -97,14 +100,14 @@ struct LiveGameCard: View {
                         .opacity(0.9)
                 }
         )
-        .mask(
-            RoundedRectangle(cornerRadius: 25, style: .continuous)
-        )
+        .cornerRadius(statsViewOpened ? 20 : 25, corners: .bottomLeft)
+        .cornerRadius(statsViewOpened ? 20 : 25, corners: .bottomRight)
+        .cornerRadius(statsViewOpened ? 0 : 25, corners: .allCorners)
     }
 }
 
 struct LiveGameCard_Previews: PreviewProvider {
     static var previews: some View {
-        LiveGameCard(game: getMockGames()[0])
+        LiveGameCard(statsViewOpened: false, game: getMockGames()[0])
     }
 }

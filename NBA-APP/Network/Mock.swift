@@ -37,11 +37,6 @@ private func readLocalFile(forName name: String) -> Data? {
     return nil
 }
 
-private func parse(jsonData: Data) -> [LiveGame] {
-    let decodedData = try? JSONDecoder().decode([LiveGame].self, from: jsonData)
-    return decodedData ?? []
-}
-
 private func loadJson(fromURLString urlString: String,
                       completion: @escaping (Result<Data, Error>) -> Void) {
     if let url = URL(string: urlString) {
@@ -58,10 +53,43 @@ private func loadJson(fromURLString urlString: String,
         urlSession.resume()
     }
 }
- 
+
 func getMockGames() -> [LiveGame] {
     if let localData = readLocalFile(forName: "MockData") {
-        return parse(jsonData: localData)
+        let decodedData = try? JSONDecoder().decode([LiveGame].self, from: localData)
+        return decodedData ?? []
     }
     return [mockGame]
+}
+
+func getMockStats() -> [GameStats] {
+    if let localData = readLocalFile(forName: "MockStats") {
+        let decodedData = try? JSONDecoder().decode([GameStats].self, from: localData)
+        return decodedData ?? []
+    }
+    return []
+}
+
+func getMockPlayers() -> [PlayerData] {
+    if let localData = readLocalFile(forName: "MockPlayers") {
+        do {
+            let decodedData = try JSONDecoder().decode([PlayerData].self, from: localData)
+            return decodedData
+        } catch let DecodingError.dataCorrupted(context) {
+            print(context)
+        } catch let DecodingError.keyNotFound(key, context) {
+            print("Key '\(key)' not found:", context.debugDescription)
+            print("codingPath:", context.codingPath)
+        } catch let DecodingError.valueNotFound(value, context) {
+            print("Value '\(value)' not found:", context.debugDescription)
+            print("codingPath:", context.codingPath)
+        } catch let DecodingError.typeMismatch(type, context)  {
+            print("Type '\(type)' mismatch:", context.debugDescription)
+            print("codingPath:", context.codingPath)
+        } catch {
+            print("error: ", error)
+        }
+
+    }
+    return []
 }

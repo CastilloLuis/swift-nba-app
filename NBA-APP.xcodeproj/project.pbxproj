@@ -25,7 +25,16 @@
 		DE113B3A29899A6D001F6BA3 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113B3929899A6D001F6BA3 /* ApiResponse.swift */; };
 		DE1C4D61298AA85700EF9D70 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C4D60298AA85700EF9D70 /* Extensions.swift */; };
 		DE1C4D63298AAF6E00EF9D70 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C4D62298AAF6E00EF9D70 /* Mock.swift */; };
+		DE719072298C95D4003B4502 /* MockPlayers.json in Resources */ = {isa = PBXBuildFile; fileRef = DE719071298C95D4003B4502 /* MockPlayers.json */; };
+		DE719075298CBC73003B4502 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = DE719074298CBC73003B4502 /* SkeletonUI */; };
+		DE719077298CBEB3003B4502 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE719076298CBEB3003B4502 /* Modifiers.swift */; };
 		DED4E847298AC77A002C542A /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = DED4E846298AC77A002C542A /* MockData.json */; };
+		DED4E849298BE77A002C542A /* GameStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED4E848298BE77A002C542A /* GameStats.swift */; };
+		DED4E84D298C0E26002C542A /* GameStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED4E84C298C0E26002C542A /* GameStatsView.swift */; };
+		DED4E851298C5E25002C542A /* MockStats.json in Resources */ = {isa = PBXBuildFile; fileRef = DED4E850298C5E25002C542A /* MockStats.json */; };
+		DED4E853298C89EE002C542A /* StatsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED4E852298C89EE002C542A /* StatsTable.swift */; };
+		DED4E855298C9276002C542A /* PlayerStatsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED4E854298C9276002C542A /* PlayerStatsTable.swift */; };
+		DED4E857298C92E6002C542A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED4E856298C92E6002C542A /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +58,15 @@
 		DE113B3929899A6D001F6BA3 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		DE1C4D60298AA85700EF9D70 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DE1C4D62298AAF6E00EF9D70 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		DE719071298C95D4003B4502 /* MockPlayers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockPlayers.json; sourceTree = "<group>"; };
+		DE719076298CBEB3003B4502 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		DED4E846298AC77A002C542A /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
+		DED4E848298BE77A002C542A /* GameStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStats.swift; sourceTree = "<group>"; };
+		DED4E84C298C0E26002C542A /* GameStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsView.swift; sourceTree = "<group>"; };
+		DED4E850298C5E25002C542A /* MockStats.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockStats.json; sourceTree = "<group>"; };
+		DED4E852298C89EE002C542A /* StatsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTable.swift; sourceTree = "<group>"; };
+		DED4E854298C9276002C542A /* PlayerStatsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatsTable.swift; sourceTree = "<group>"; };
+		DED4E856298C92E6002C542A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE719075298CBC73003B4502 /* SkeletonUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +106,7 @@
 				DE113B1129888C17001F6BA3 /* ContentView.swift */,
 				DE113B2A29893F1C001F6BA3 /* CustomFont.swift */,
 				DE1C4D60298AA85700EF9D70 /* Extensions.swift */,
+				DE719076298CBEB3003B4502 /* Modifiers.swift */,
 				DE113B3129894D32001F6BA3 /* Network */,
 				DE113B2C29894720001F6BA3 /* Components */,
 				DE113B2229893EB5001F6BA3 /* Fonts */,
@@ -110,6 +129,7 @@
 			children = (
 				DE113B1E29888CB5001F6BA3 /* OnboardingView.swift */,
 				DE113B2029893D8E001F6BA3 /* HomeView.swift */,
+				DED4E84C298C0E26002C542A /* GameStatsView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -129,6 +149,8 @@
 			children = (
 				DE113B2D29894737001F6BA3 /* RecentGameCard.swift */,
 				DE113B2F29894B5E001F6BA3 /* LiveGameCard.swift */,
+				DED4E852298C89EE002C542A /* StatsTable.swift */,
+				DED4E854298C9276002C542A /* PlayerStatsTable.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -140,6 +162,8 @@
 				DE113B3229894D45001F6BA3 /* Network.swift */,
 				DE1C4D62298AAF6E00EF9D70 /* Mock.swift */,
 				DED4E846298AC77A002C542A /* MockData.json */,
+				DED4E850298C5E25002C542A /* MockStats.json */,
+				DE719071298C95D4003B4502 /* MockPlayers.json */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -150,6 +174,8 @@
 				DE113B35298958CD001F6BA3 /* LiveGame.swift */,
 				DE113B3729895931001F6BA3 /* JSONAny.swift */,
 				DE113B3929899A6D001F6BA3 /* ApiResponse.swift */,
+				DED4E848298BE77A002C542A /* GameStats.swift */,
+				DED4E856298C92E6002C542A /* Player.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,6 +196,9 @@
 			dependencies = (
 			);
 			name = "NBA-APP";
+			packageProductDependencies = (
+				DE719074298CBC73003B4502 /* SkeletonUI */,
+			);
 			productName = "NBA-APP";
 			productReference = DE113B0C29888C17001F6BA3 /* NBA-APP.app */;
 			productType = "com.apple.product-type.application";
@@ -198,6 +227,9 @@
 				Base,
 			);
 			mainGroup = DE113B0329888C17001F6BA3;
+			packageReferences = (
+				DE719073298CBC73003B4502 /* XCRemoteSwiftPackageReference "SkeletonUI" */,
+			);
 			productRefGroup = DE113B0D29888C17001F6BA3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -214,9 +246,11 @@
 			files = (
 				DE113B1729888C18001F6BA3 /* Preview Assets.xcassets in Resources */,
 				DE113B2629893EB5001F6BA3 /* Inter-Regular.ttf in Resources */,
+				DE719072298C95D4003B4502 /* MockPlayers.json in Resources */,
 				DE113B1429888C18001F6BA3 /* Assets.xcassets in Resources */,
 				DE113B2829893EB5001F6BA3 /* Inter-SemiBold.ttf in Resources */,
 				DE113B2729893EB5001F6BA3 /* Poppins-Bold.ttf in Resources */,
+				DED4E851298C5E25002C542A /* MockStats.json in Resources */,
 				DED4E847298AC77A002C542A /* MockData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,16 +264,22 @@
 			files = (
 				DE113B3A29899A6D001F6BA3 /* ApiResponse.swift in Sources */,
 				DE113B2B29893F1C001F6BA3 /* CustomFont.swift in Sources */,
+				DED4E853298C89EE002C542A /* StatsTable.swift in Sources */,
 				DE113B1F29888CB5001F6BA3 /* OnboardingView.swift in Sources */,
 				DE113B3329894D45001F6BA3 /* Network.swift in Sources */,
+				DED4E84D298C0E26002C542A /* GameStatsView.swift in Sources */,
 				DE113B2E29894737001F6BA3 /* RecentGameCard.swift in Sources */,
+				DE719077298CBEB3003B4502 /* Modifiers.swift in Sources */,
+				DED4E855298C9276002C542A /* PlayerStatsTable.swift in Sources */,
 				DE113B36298958CD001F6BA3 /* LiveGame.swift in Sources */,
 				DE113B3029894B5E001F6BA3 /* LiveGameCard.swift in Sources */,
+				DED4E849298BE77A002C542A /* GameStats.swift in Sources */,
 				DE1C4D61298AA85700EF9D70 /* Extensions.swift in Sources */,
 				DE113B2129893D8E001F6BA3 /* HomeView.swift in Sources */,
 				DE113B1229888C17001F6BA3 /* ContentView.swift in Sources */,
 				DE113B3829895931001F6BA3 /* JSONAny.swift in Sources */,
 				DE1C4D63298AAF6E00EF9D70 /* Mock.swift in Sources */,
+				DED4E857298C92E6002C542A /* Player.swift in Sources */,
 				DE113B1029888C17001F6BA3 /* NBA_APPApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +481,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE719073298CBC73003B4502 /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CSolanaM/SkeletonUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE719074298CBC73003B4502 /* SkeletonUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE719073298CBC73003B4502 /* XCRemoteSwiftPackageReference "SkeletonUI" */;
+			productName = SkeletonUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE113B0429888C17001F6BA3 /* Project object */;
 }

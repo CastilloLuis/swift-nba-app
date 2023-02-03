@@ -13,6 +13,17 @@ struct Last7DaysFormat {
     let dates: [Date]
 }
 
+struct RoundedCorner: Shape {
+
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
+    }
+}
+
 extension Date {
     func getLast7Days(asString: Bool = true) -> Last7DaysFormat  {
         let dateInWeek = Date()
@@ -59,5 +70,26 @@ extension Color {
             blue:  Double(b) / 255,
             opacity: Double(a) / 255
         )
+    }
+}
+
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape( RoundedCorner(radius: radius, corners: corners) )
+    }
+    
+    func swipe(
+        up: @escaping (() -> Void) = {},
+        down: @escaping (() -> Void) = {},
+        left: @escaping (() -> Void) = {},
+        right: @escaping (() -> Void) = {}
+    ) -> some View {
+        return self.gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+            .onEnded({ value in
+                if value.translation.width < 0 { left() }
+                if value.translation.width > 0 { right() }
+                if value.translation.height < 0 { up() }
+                if value.translation.height > 0 { down() }
+            }))
     }
 }

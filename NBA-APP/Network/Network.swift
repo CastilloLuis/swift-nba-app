@@ -35,7 +35,7 @@ class Network: ObservableObject {
     }
 
     func getGames(date: String, live: Bool = false) async -> [LiveGame] {
-        var finalResponse: [LiveGame] = []
+        var games: [LiveGame] = []
         var urlRequest = getUrlRequestObject("/games")
         var urlQueryItems: [URLQueryItem] = []
         
@@ -53,18 +53,18 @@ class Network: ObservableObject {
             
             let decodedApiResponse = try JSONDecoder().decode([LiveGame].self, from: apiResponse)
             
-            finalResponse = decodedApiResponse
+            games = decodedApiResponse
             
         } catch {
             print("Error", error)
         }
         
-        return finalResponse
+        return games
     }
     
     func getLastWeekHistoryGames() async -> [LiveGame] {
-        var games = [LiveGame]()
-        var dates = Date().getLast7Days().datesAsString
+        var games: [LiveGame] = []
+        let dates = Date().getLast7Days().datesAsString
         
         print(games.count)
 
@@ -83,6 +83,28 @@ class Network: ObservableObject {
         print(games.count)
 
         return games
+    }
+    
+    func getGameStats(gameId: Int) async -> [GameStats] {
+        var gameStats: [GameStats] = []
+        var urlRequest = getUrlRequestObject("/games/statistics")
+            urlRequest.url?.append(queryItems: [URLQueryItem(name: "id", value: "\(gameId)")])
+        
+        do {
+            let apiResponse = try? await callApi(urlRequest: urlRequest)
+            
+            guard let apiResponse = apiResponse else {
+                return []
+            }
+            
+            let decodedApiResponse = try JSONDecoder().decode([GameStats].self, from: apiResponse)
+            
+            gameStats = decodedApiResponse
+        } catch {
+            print("Error", error)
+        }
+        
+        return gameStats
     }
 }
 
