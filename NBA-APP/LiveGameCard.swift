@@ -18,9 +18,11 @@ struct LiveGameCard: View {
                 VStack {
                     Text(game.teams?.home.nickname ?? "-")
                         .customFont(.footnote)
+                        .foregroundColor(.white)
                     Text("\(game.scores?.home.points ?? 0)").font(
                         .custom("Poppins Bold", size: 40)
                     )
+                    .foregroundColor(.white)
                 }
                 .overlay {
                     VStack {
@@ -35,18 +37,22 @@ struct LiveGameCard: View {
                     }
                     .frame(width: statsViewOpened ? 80 : 120, height: statsViewOpened ? 80 : 120)
                     .position(x: -65, y: 40)
+                    .shadow(color: Color.white.opacity(0.3), radius: 10, x: 0, y: 0)
                 }
                 
                 Text("vs")
                     .padding(.top, 10)
                     .opacity(0.7)
+                    .foregroundColor(.white)
                 
                 VStack {
                     Text(game.teams?.visitors.nickname ?? "-")
                         .customFont(.footnote)
+                        .foregroundColor(.white)
                     Text("\(game.scores?.visitors.points ?? 0)").font(
                         .custom("Poppins Bold", size: 40)
                     )
+                    .foregroundColor(.white)
                 }
                 .overlay {
                     VStack {
@@ -60,6 +66,7 @@ struct LiveGameCard: View {
                     }
                     .frame(width: statsViewOpened ? 80 : 120, height: statsViewOpened ? 80 : 120)
                     .position(x: 125, y: 40)
+                    .shadow(color: Color.white.opacity(0.3), radius: 10, x: 0, y: 0)
                 }
             }
             .overlay {
@@ -74,10 +81,10 @@ struct LiveGameCard: View {
                                 Circle().fill(.red.opacity(0.5))
                                     .frame(width: 15, height: 15)
                             }
-                            Text("LIVE").customFont(.footnote2)
-                            Text("\(game.periods?.current ?? 0)/4").customFont(.footnote2)
+                            Text("LIVE").customFont(.footnote2).foregroundColor(.white)
+                            Text("\(game.periods?.current ?? 0)/4").customFont(.footnote2).foregroundColor(.white)
                         case 3:
-                            Text("FINAL").customFont(.footnote2)
+                            Text("FINAL").customFont(.footnote2).foregroundColor(.white)
                         default:
                             Text("-")
                     }
@@ -95,14 +102,15 @@ struct LiveGameCard: View {
                 .overlay {
                     Rectangle()
                         .fill(
-                            .linearGradient(colors: [Color(hex: "8e9eab"), Color(hex: "eef2f3")], startPoint: .top, endPoint: .bottom)
+                            .linearGradient(colors: [Color(hex: "#232526"), Color(hex: "#414345").opacity(0.5)], startPoint: .top, endPoint: .bottom)
                         )
                         .opacity(0.9)
                 }
         )
-        .cornerRadius(statsViewOpened ? 20 : 25, corners: .bottomLeft)
-        .cornerRadius(statsViewOpened ? 20 : 25, corners: .bottomRight)
+        .cornerRadius(statsViewOpened ? 45 : 25, corners: .bottomLeft)
+        .cornerRadius(statsViewOpened ? 45 : 25, corners: .bottomRight)
         .cornerRadius(statsViewOpened ? 0 : 25, corners: .allCorners)
+        .shadow(color: Color.black.opacity(statsViewOpened ? 0 : 0.5), radius: 10, x: 0, y: 0)
     }
 }
 

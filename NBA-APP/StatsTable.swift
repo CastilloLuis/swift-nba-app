@@ -16,11 +16,11 @@ struct StatsTable: View {
     func HorizontalStat(_ hStat: Int, _ vStat: Int, _ label: String) -> some View {
         return VStack{
             HStack {
-                Text("\(hStat)")
+                Text("\(hStat)").customFont(.footnote2)
                 Spacer()
-                Text(label)
+                Text(label.uppercased()).customFont(.footnote)
                 Spacer()
-                Text("\(vStat)")
+                Text("\(vStat)").customFont(.footnote2)
             }
             .frame(height: 30)
             Divider()
@@ -33,20 +33,20 @@ struct StatsTable: View {
                 AsyncImage(url: URL(string: homeLogo)) { image in
                     image
                         .resizable()
-                        .frame(width: 50, height: 50)
+                        .frame(width: 30, height: 30)
                 } placeholder: {
                     //put your placeholder here
                 }
                 
                 Spacer()
                 Text("game stats".uppercased())
-                    .customFont(.headline)
+                    .customFont(.title3)
                 Spacer()
                 
                 AsyncImage(url: URL(string: visitorLogo)) { image in
                     image
                         .resizable()
-                        .frame(width: 50, height: 50)
+                        .frame(width: 30, height: 30)
                 } placeholder: {
                     //put your placeholder here
                 }

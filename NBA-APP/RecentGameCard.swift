@@ -58,6 +58,7 @@ struct RecentGameCard: View {
             .mask(
                 RoundedRectangle(cornerRadius: 25, style: .continuous)
             )
+            .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 0)
     }
 }
 

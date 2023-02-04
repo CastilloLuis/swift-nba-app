@@ -7,30 +7,32 @@
 
 import SwiftUI
 
+var statsTitle = ["min", "reb", "ast", "pts"]
+
 struct PlayerStatsTable: View {
     var players: [PlayerData] = getMockPlayers()
     
     var body: some View {
         VStack {
             HStack {
-                Text("Player")
+                Text("Player").customFont(.footnote2)
                 Spacer()
-                Text("Min").frame(width: 30)
-                Text("Reb").frame(width: 30)
-                Text("Ast").frame(width: 30)
-                Text("Pts").frame(width: 30)
+                ForEach(statsTitle, id: \.self) { title in
+                    Text(title.uppercased())
+                        .customFont(.footnote2).frame(width: 35)
+                }
             }
             Divider()
             ScrollView {
                 ForEach(players.filter { $0.pos != nil}, id: \.player.id) { player in
                     HStack {
-                        Text("\(player.pos!)  -")
-                        Text("\(player.player.firstname!) \(player.player.lastname!)")
+                        Text("\(player.pos!)  -").customFont(.footnote)
+                        Text("\(player.player.firstname!) \(player.player.lastname!)").customFont(.footnote)
                         Spacer()
-                        Text("\(player.min ?? "0")").frame(width: 50)
-                        Text("\(player.totReb ?? 0)").frame(width: 30)
-                        Text("\(player.assists ?? 0)").frame(width: 30)
-                        Text("\(player.points ?? 0)").frame(width: 30)
+                        Text("\(player.min ?? "0")").customFont(.footnote).frame(width: 50)
+                        Text("\(player.totReb ?? 0)").customFont(.footnote).frame(width: 30)
+                        Text("\(player.assists ?? 0)").customFont(.footnote).frame(width: 30)
+                        Text("\(player.points ?? 0)").customFont(.footnote).frame(width: 30)
                     }
                     Divider().opacity(0.5)
                 }

@@ -106,6 +106,26 @@ class Network: ObservableObject {
         
         return gameStats
     }
+    
+    
+    func getPlayersStatsPerGame(gameId: Int?) async -> Dictionary<String, Array<PlayerData>> {
+        
+        let decodedApiResponse = getMockPlayers().filter { $0.pos != nil }
+        
+        let groupByTeam = Dictionary(grouping: decodedApiResponse) { (player) -> String in
+            return player.team.nickname
+        }
+        
+        return groupByTeam
+    }
+    
+    
+}
+
+struct Testing: Identifiable {
+    var id = UUID()
+    var team: Team
+    var player: PlayerData
 }
 
 // OLD WAY
