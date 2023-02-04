@@ -29,6 +29,7 @@
 		DE719075298CBC73003B4502 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = DE719074298CBC73003B4502 /* SkeletonUI */; };
 		DE719077298CBEB3003B4502 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE719076298CBEB3003B4502 /* Modifiers.swift */; };
 		DEAB501C298EEA8A00E3A50C /* SummaryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAB501B298EEA8A00E3A50C /* SummaryTable.swift */; };
+		DEAB501E298F04F700E3A50C /* PillSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAB501D298F04F700E3A50C /* PillSelection.swift */; };
 		DED4E847298AC77A002C542A /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = DED4E846298AC77A002C542A /* MockData.json */; };
 		DED4E849298BE77A002C542A /* GameStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED4E848298BE77A002C542A /* GameStats.swift */; };
 		DED4E84D298C0E26002C542A /* GameStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED4E84C298C0E26002C542A /* GameStatsView.swift */; };
@@ -62,6 +63,7 @@
 		DE719071298C95D4003B4502 /* MockPlayers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockPlayers.json; sourceTree = "<group>"; };
 		DE719076298CBEB3003B4502 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		DEAB501B298EEA8A00E3A50C /* SummaryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTable.swift; sourceTree = "<group>"; };
+		DEAB501D298F04F700E3A50C /* PillSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillSelection.swift; sourceTree = "<group>"; };
 		DED4E846298AC77A002C542A /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
 		DED4E848298BE77A002C542A /* GameStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStats.swift; sourceTree = "<group>"; };
 		DED4E84C298C0E26002C542A /* GameStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsView.swift; sourceTree = "<group>"; };
@@ -103,12 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				DE113B2929893EBF001F6BA3 /* Info.plist */,
-				DE113B1D29888C8E001F6BA3 /* Views */,
 				DE113B0F29888C17001F6BA3 /* NBA_APPApp.swift */,
-				DE113B1129888C17001F6BA3 /* ContentView.swift */,
-				DE113B2A29893F1C001F6BA3 /* CustomFont.swift */,
-				DE1C4D60298AA85700EF9D70 /* Extensions.swift */,
-				DE719076298CBEB3003B4502 /* Modifiers.swift */,
+				DE113B1D29888C8E001F6BA3 /* Views */,
+				DE63C8CD298F159D006B92C9 /* Utils */,
 				DE113B3129894D32001F6BA3 /* Network */,
 				DE113B2C29894720001F6BA3 /* Components */,
 				DE113B2229893EB5001F6BA3 /* Fonts */,
@@ -129,6 +128,7 @@
 		DE113B1D29888C8E001F6BA3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE113B1129888C17001F6BA3 /* ContentView.swift */,
 				DE113B1E29888CB5001F6BA3 /* OnboardingView.swift */,
 				DE113B2029893D8E001F6BA3 /* HomeView.swift */,
 				DED4E84C298C0E26002C542A /* GameStatsView.swift */,
@@ -154,6 +154,7 @@
 				DED4E852298C89EE002C542A /* StatsTable.swift */,
 				DED4E854298C9276002C542A /* PlayerStatsTable.swift */,
 				DEAB501B298EEA8A00E3A50C /* SummaryTable.swift */,
+				DEAB501D298F04F700E3A50C /* PillSelection.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -161,12 +162,9 @@
 		DE113B3129894D32001F6BA3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				DE63C8CC298F154A006B92C9 /* MockProvider */,
 				DE113B34298958C1001F6BA3 /* Models */,
 				DE113B3229894D45001F6BA3 /* Network.swift */,
-				DE1C4D62298AAF6E00EF9D70 /* Mock.swift */,
-				DED4E846298AC77A002C542A /* MockData.json */,
-				DED4E850298C5E25002C542A /* MockStats.json */,
-				DE719071298C95D4003B4502 /* MockPlayers.json */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -181,6 +179,27 @@
 				DED4E856298C92E6002C542A /* Player.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DE63C8CC298F154A006B92C9 /* MockProvider */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C4D62298AAF6E00EF9D70 /* Mock.swift */,
+				DED4E846298AC77A002C542A /* MockData.json */,
+				DED4E850298C5E25002C542A /* MockStats.json */,
+				DE719071298C95D4003B4502 /* MockPlayers.json */,
+			);
+			path = MockProvider;
+			sourceTree = "<group>";
+		};
+		DE63C8CD298F159D006B92C9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DE113B2A29893F1C001F6BA3 /* CustomFont.swift */,
+				DE1C4D60298AA85700EF9D70 /* Extensions.swift */,
+				DE719076298CBEB3003B4502 /* Modifiers.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +298,7 @@
 				DE113B3029894B5E001F6BA3 /* LiveGameCard.swift in Sources */,
 				DED4E849298BE77A002C542A /* GameStats.swift in Sources */,
 				DE1C4D61298AA85700EF9D70 /* Extensions.swift in Sources */,
+				DEAB501E298F04F700E3A50C /* PillSelection.swift in Sources */,
 				DE113B2129893D8E001F6BA3 /* HomeView.swift in Sources */,
 				DE113B1229888C17001F6BA3 /* ContentView.swift in Sources */,
 				DE113B3829895931001F6BA3 /* JSONAny.swift in Sources */,

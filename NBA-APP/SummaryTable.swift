@@ -19,6 +19,29 @@ struct SummaryTable: View {
         return "\(totalSum)"
     }
     
+    func HorizontalScoreTable(_ game: LiveGame, _ home: Bool) -> some View {
+        let gameTeamSelected = home ? game.teams!.home : game.teams!.visitors
+        let gameScoreSelected = home ? game.scores!.home : game.scores!.visitors
+        return HStack {
+            AsyncImage(url: URL(string: gameTeamSelected.logo)) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+            } placeholder: {
+                //put your placeholder here
+            }
+            .frame(maxWidth: .infinity, maxHeight: 36)
+            ForEach(gameScoreSelected.linescore, id: \.self) { lineScore in
+                Text("\(lineScore)")
+                    .customFont(.footnote)
+                    .frame(maxWidth: .infinity, maxHeight: 36)
+            }
+            Text(sumTotalPoints(points: gameScoreSelected.linescore))
+                .customFont(.headline)
+                .frame(maxWidth: .infinity, maxHeight: 36)
+        }
+    }
+    
     var body: some View {
         VStack {
             VStack {
@@ -27,7 +50,7 @@ struct SummaryTable: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.bottom, 20)
                 HStack {
-                    Rectangle().fill(.black.opacity(0)).frame(width: 50, height: 50)
+                    Rectangle().fill(.black.opacity(0)).frame(maxWidth: .infinity, maxHeight: 36)
                     ForEach([1, 2, 3, 4], id: \.self) { lineScore in
                         Text("Q\(lineScore)".uppercased())
                             .customFont(.footnote)
@@ -41,45 +64,10 @@ struct SummaryTable: View {
                 }
                 .frame(height: 10)
                 Divider()
-                    .frame(height: 1)
-                HStack {
-                    AsyncImage(url: URL(string: getMockStats()[0].team.logo)) { image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                    } placeholder: {
-                        //put your placeholder here
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: 36)
-                    ForEach(getMockGames()[0].scores?.home.linescore ?? [], id: \.self) { lineScore in
-                        Text("\(lineScore)")
-                            .customFont(.footnote)
-                            .frame(maxWidth: .infinity, maxHeight: 36)
-                    }
-                    Text(sumTotalPoints(points: getMockGames()[0].scores?.home.linescore ?? []))
-                        .customFont(.headline)
-                        .frame(maxWidth: .infinity, maxHeight: 36)
-                }
+                HorizontalScoreTable(getMockGames()[0], true)
                 Divider()
-                    .frame(height: 1)
-                HStack {
-                    AsyncImage(url: URL(string: getMockStats()[1].team.logo)) { image in
-                        image
-                            .resizable()
-                            .scaledToFit()
-                    } placeholder: {
-                        //put your placeholder here
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: 36)
-                    ForEach(getMockGames()[0].scores?.visitors.linescore ?? [], id: \.self) { lineScore in
-                        Text("\(lineScore)")
-                            .customFont(.footnote)
-                            .frame(maxWidth: .infinity, maxHeight: 36)
-                    }
-                    Text(sumTotalPoints(points: getMockGames()[0].scores?.visitors.linescore ?? []))
-                        .customFont(.headline)
-                        .frame(maxWidth: .infinity, maxHeight: 36)
-                }
+                HorizontalScoreTable(getMockGames()[0], false)
+                Divider()
             }
             .padding(.bottom, 30)
             VStack {

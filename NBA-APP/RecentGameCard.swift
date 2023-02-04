@@ -60,6 +60,8 @@ struct RecentGameCard: View {
             )
             .shadow(color: Color.black.opacity(0.5), radius: 10, x: 0, y: 0)
     }
+    
+    
 }
 
 struct RecentGameCard_Previews: PreviewProvider {

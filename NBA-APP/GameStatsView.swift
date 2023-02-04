@@ -7,10 +7,26 @@
 
 import SwiftUI
 
+struct StatsTab {
+    let type: StatsTabsTypes
+    let label: String
+}
+
+enum StatsTabsTypes {
+    case players, stats, summary
+}
+
+var statisticsTabs = [
+    StatsTab(type: .summary, label: "Summary"),
+    StatsTab(type: .players, label: "Players"),
+    StatsTab(type: .stats, label: "Statistics"),
+]
+
+
 struct GameStatsView: View {
     var network = Network()
-    @State var selectedTab: StatsTabs = .summary
-    @State var selectedTeamTab: TeamsTabs = .home
+    @State var selectedTab: StatsTab = statisticsTabs[0]
+    @State var selectedTeamTab: PillSelectionTabs?
     @State var topPerformers: [PlayerData] = []
     
     var gameStats = getMockStats()
@@ -18,6 +34,8 @@ struct GameStatsView: View {
     func getTopPerformers() async {
         let teams = await network.getPlayersStatsPerGame(gameId: 0)
         let teamsKeys = Array(teams.keys)
+        topPerformers = []
+        print(teamsKeys)
         for key in teamsKeys {
             let player = teams[key]?.max{a, b in a.points! < b.points!}
             if let p = player {
@@ -28,109 +46,21 @@ struct GameStatsView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                Text("Summary")
-                    .customFont(.headline)
-                    .frame(maxWidth: .infinity, maxHeight: 46)
-                    .opacity(selectedTab == .summary ? 1 : 0.5)
-                    .onTapGesture {
-                        withAnimation {
-                            selectedTab = .summary
-                        }
-                    }
-                    .background(
-                        Rectangle()
-                            .fill(Color.white)
-                            .padding(.bottom, 1)
-                            .background(Color(hex: "#FFD200").opacity(selectedTab == .summary ? 1: 0))
-                    )
-                    .task {
-                        await getTopPerformers()
-                    }
-                Text("Players")
-                    .customFont(.headline)
-                    .frame(maxWidth: .infinity, maxHeight: 46)
-                    .opacity(selectedTab == .players ? 1 : 0.5)
-                    .onTapGesture {
-                        withAnimation {
-                            selectedTab = .players
-                        }
-                    }
-                    .background(
-                        Rectangle()
-                            .fill(Color.white)
-                            .padding(.bottom, 1)
-                            .background(Color(hex: "#FFD200").opacity(selectedTab == .players ? 1: 0))
-                    )
-                Text("Statistics")
-                    .customFont(.headline)
-                    .frame(maxWidth: .infinity, maxHeight: 46)
-                    .opacity(selectedTab == .stats ? 1 : 0.5)
-                    .onTapGesture {
-                        withAnimation {
-                            selectedTab = .stats
-                        }
-                    }
-                    .background(
-                        Rectangle()
-                            .fill(Color.white)
-                            .padding(.bottom, 1)
-                            .background(Color(hex: "#FFD200").opacity(selectedTab == .stats ? 1: 0))
-                    )
-                Spacer()
-            }
-            .frame(maxWidth: .infinity)
-            Rectangle()
-                .fill(.black.opacity(0.1))
-                .frame(height: 1)
-                .padding(.top, -9)
-                .padding(.horizontal, 7)
-            
-            if (selectedTab == .players) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 25)
-                        .fill(
-                            .white
-                        )
-                        .frame(width: 122, height: 34)
-                        .offset(x: selectedTeamTab == .home ? -60 : 60)
-                        
-                    HStack {
-                        VStack {
-                            Text("Cleveland")
-                                .customFont(.footnote2)
-                                .foregroundColor(.black)
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: 30, alignment: .center)
-                        .onTapGesture {
-                            withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                                selectedTeamTab = .home
-                            }
-                        }
-                        VStack {
-                            Text("Bucks")
-                                .customFont(.footnote2)
-                                .foregroundColor(.black)
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: 30, alignment: .center)
-                        .onTapGesture {
-                            withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                                selectedTeamTab = .visitor
-                            }
-                        }
-                    }
+            GameStatsTabs()
+        
+            if (selectedTab.type == StatsTabsTypes.players) {
+                VStack {
+                    PillSelection(
+                        tabs: [
+                            PillSelectionTabs(label: "Heat"),
+                            PillSelectionTabs(label: "Nets")
+                        ]
+                    ) { item in selectedTeamTab = item }
                 }
-                .padding(.horizontal, 5)
-                .frame(width: 250, height: 40)
-                .background(
-                    .linearGradient(colors: [Color(hex: "#F7971E"), Color(hex: "#FFD200")], startPoint: .topTrailing, endPoint: .bottomTrailing)
-                )
-                .cornerRadius(20, corners: .allCorners)
             }
             
             TabView {
-                switch selectedTab {
+                switch selectedTab.type {
                     case .summary:
                         SummaryTable(topPerformers: topPerformers)
                     case .players:
@@ -144,19 +74,46 @@ struct GameStatsView: View {
         .padding(.horizontal, 20)
         .background(.white)
     }
+    
+    func GameStatsTabs() -> some View {
+        return VStack {
+            HStack {
+                Spacer()
+                
+                ForEach(statisticsTabs, id: \.type) { tab in
+                    Text(tab.label)
+                        .customFont(.title4)
+                        .frame(maxWidth: .infinity, maxHeight: 46)
+                        .opacity(selectedTab.type == tab.type ? 1 : 0.5)
+                        .onTapGesture {
+                            withAnimation {
+                                selectedTab = tab
+                            }
+                        }
+                        .background(
+                            Rectangle()
+                                .fill(Color.white)
+                                .padding(.bottom, 1)
+                                .background(Color(hex: "#FFD200").opacity(selectedTab.type == tab.type ? 1: 0))
+                        )
+                        .task {
+                            await getTopPerformers()
+                        }
+                }
+                Spacer()
+            }
+            .frame(maxWidth: .infinity)
+            Rectangle()
+                .fill(.black.opacity(0.1))
+                .frame(height: 1)
+                .padding(.top, -9)
+                .padding(.horizontal, 7)
+        }
+    }
 }
 
 struct GameStatsView_Previews: PreviewProvider {
     static var previews: some View {
         GameStatsView(network: Network())
     }
-}
-
-
-enum StatsTabs {
-    case players, stats, summary
-}
-
-enum TeamsTabs {
-    case home, visitor
 }

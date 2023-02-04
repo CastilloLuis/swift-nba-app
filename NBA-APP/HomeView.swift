@@ -65,7 +65,6 @@ struct HomeView: View {
                             }
                         }
                         .task {
-                            await network.getPlayersStatsPerGame(gameId: 0)
             //                await getLiveGames()
             //                await getLatestGames()
                         }
@@ -92,9 +91,11 @@ struct HomeView: View {
                 VStack {
                     LiveGameCard(statsViewOpened: true, game: getMockGames()[2])
                         .onTapGesture {
+                            let prevId = selectedGameId
                             withAnimation(.spring(response: 0.5)) {
                                 selectedGameId = nil
                             }
+                            scrollToId = prevId
                         }
                         .matchedGeometryEffect(id: selectedGameId, in: namespace)
                     

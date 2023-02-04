@@ -5,7 +5,7 @@ struct CustomFont: ViewModifier {
 
     var name: String {
         switch textStyle {
-        case .largeTitle, .title, .title2, .title3:
+        case .largeTitle, .title, .title2, .title3, .title4:
             return "Poppins Bold"
         case .body, .subheadline, .footnote, .caption:
             return "Inter Regular"
@@ -24,6 +24,8 @@ struct CustomFont: ViewModifier {
             return 24
         case .title3:
             return 20
+        case .title4:
+            return 16
         case .body:
             return 17
         case .headline:
@@ -52,6 +54,8 @@ struct CustomFont: ViewModifier {
         case .title2:
             return .title2
         case .title3:
+            return .title3
+        case .title4:
             return .title3
         case .body:
             return .body
@@ -88,6 +92,7 @@ enum TextStyle {
     case title
     case title2
     case title3
+    case title4
     case body
     case headline
     case subheadline

@@ -22,7 +22,6 @@ struct PlayerStatsTable: View {
                         .customFont(.footnote2).frame(width: 35)
                 }
             }
-            Divider()
             ScrollView {
                 ForEach(players.filter { $0.pos != nil}, id: \.player.id) { player in
                     HStack {
