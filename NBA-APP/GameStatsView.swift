@@ -56,20 +56,17 @@ struct GameStatsView: View {
                             PillSelectionTabs(label: "Nets")
                         ]
                     ) { item in selectedTeamTab = item }
-                }
+                    Divider().padding(.top, 10)
+                }.padding(.bottom, 10)
             }
-            
-            TabView {
                 switch selectedTab.type {
                     case .summary:
-                        SummaryTable(topPerformers: topPerformers)
+                    SummaryTable(topPerformers: topPerformers)
                     case .players:
                         PlayerStatsTable(players: getMockPlayers())
                     case .stats:
                         StatsTable(homeLogo: gameStats[0].team.logo, visitorLogo: gameStats[1].team.logo, homeStats: gameStats[0].statistics[0], visitorStats: gameStats[1].statistics[0])
                 }
-            }
-            .tabViewStyle(.page)
         }
         .padding(.horizontal, 20)
         .background(.white)

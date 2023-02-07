@@ -34,59 +34,66 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             if (selectedGameId == nil) {
-                VStack {
-                    Text("Live")
-                        .customFont(.largeTitle)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, -20)
-                    ScrollViewReader { scrollProxy in
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 20) {
-                                ForEach(liveGames, id: \.id) { game in
-                                    LiveGameCard(statsViewOpened: false, game: game)
-                                        .id(game.id)
-                                        .matchedGeometryEffect(id: game.id, in: namespace)
-                                        .onTapGesture {
-                                            withAnimation(.spring(response: 0.5)) {
-                                                selectedGameId = game.id
-                                            }
+                NavigationStack {
+                    ScrollView {
+                        VStack {
+                            Text("Live")
+                                .customFont(.largeTitle)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 20)
+                                .padding(.bottom, -20)
+                            ScrollViewReader { scrollProxy in
+                                ScrollView(.horizontal, showsIndicators: false) {
+                                    HStack(spacing: 20) {
+                                        ForEach(liveGames, id: \.id) { game in
+                                            LiveGameCard(statsViewOpened: false, game: game)
+                                                .id(game.id)
+                                                .matchedGeometryEffect(id: game.id, in: namespace)
+                                                .onTapGesture {
+                                                    withAnimation(.spring(response: 0.5)) {
+                                                        selectedGameId = game.id
+                                                    }
+                                                }
                                         }
+                                        .padding(.vertical)
+                                    }
+                                    .padding()
                                 }
-                                .padding(.vertical)
+                                .onChange(of: self.scrollToId) { id in
+                                    guard id != nil else { return }
+                                    
+                                    withAnimation {
+                                        scrollProxy.scrollTo(id)
+                                    }
+                                }
+                                .task {
+                    //                await getLiveGames()
+                    //                await getLatestGames()
+                                }
                             }
-                            .padding()
-                        }
-                        .onChange(of: self.scrollToId) { id in
-                            guard id != nil else { return }
+                            .padding(.bottom, -20)
+                            Text("Latest Games")
+                                .customFont(.largeTitle)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 20)
+                                .padding(.bottom, -20)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 30) {
+                                    ForEach(latestGames, id: \.id) { game in
+                                        RecentGameCard(game: game)
+                                    }
+                                    .padding(.vertical)
+                                }.padding()
+                                
+                            }
                             
-                            withAnimation {
-                                scrollProxy.scrollTo(id)
-                            }
+                            NewsSlider()
+                            
+                            Spacer()
                         }
-                        .task {
-            //                await getLiveGames()
-            //                await getLatestGames()
-                        }
+                        .padding(.top, 80)
                     }
-                    .padding(.bottom, -20)
-                    Text("Latest Games")
-                        .customFont(.largeTitle)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, -20)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 30) {
-                            ForEach(latestGames, id: \.id) { game in
-                                RecentGameCard(game: game)
-                            }
-                            .padding(.vertical)
-                        }.padding()
-                        
-                    }
-                    Spacer()
                 }
-                .padding(.top, 80)
             } else {
                 VStack {
                     LiveGameCard(statsViewOpened: true, game: getMockGames()[2])
@@ -110,6 +117,7 @@ struct HomeView: View {
                 }
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ignoresSafeArea()
     }
 }
