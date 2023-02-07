@@ -35,6 +35,10 @@
 		DEADD3652991671B00999C2C /* MockNews.json in Resources */ = {isa = PBXBuildFile; fileRef = DEADD3642991671B00999C2C /* MockNews.json */; };
 		DEADD3692991B8C100999C2C /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEADD3682991B8C100999C2C /* WebView.swift */; };
 		DEADD36B2991C93100999C2C /* NewsSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEADD36A2991C93100999C2C /* NewsSlider.swift */; };
+		DEADD36F299287F600999C2C /* MockPlayerSportsIo.json in Resources */ = {isa = PBXBuildFile; fileRef = DEADD36E299287F600999C2C /* MockPlayerSportsIo.json */; };
+		DEADD3712992903900999C2C /* PlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEADD3702992903900999C2C /* PlayerDetailView.swift */; };
+		DEADD3752992943A00999C2C /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEADD3742992943A00999C2C /* Team.swift */; };
+		DEADD3772992974D00999C2C /* MockAllTeams.json in Resources */ = {isa = PBXBuildFile; fileRef = DEADD3762992974D00999C2C /* MockAllTeams.json */; };
 		DED4E847298AC77A002C542A /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = DED4E846298AC77A002C542A /* MockData.json */; };
 		DED4E849298BE77A002C542A /* GameStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED4E848298BE77A002C542A /* GameStats.swift */; };
 		DED4E84D298C0E26002C542A /* GameStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED4E84C298C0E26002C542A /* GameStatsView.swift */; };
@@ -74,6 +78,10 @@
 		DEADD3642991671B00999C2C /* MockNews.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockNews.json; sourceTree = "<group>"; };
 		DEADD3682991B8C100999C2C /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		DEADD36A2991C93100999C2C /* NewsSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSlider.swift; sourceTree = "<group>"; };
+		DEADD36E299287F600999C2C /* MockPlayerSportsIo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockPlayerSportsIo.json; sourceTree = "<group>"; };
+		DEADD3702992903900999C2C /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
+		DEADD3742992943A00999C2C /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		DEADD3762992974D00999C2C /* MockAllTeams.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockAllTeams.json; sourceTree = "<group>"; };
 		DED4E846298AC77A002C542A /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
 		DED4E848298BE77A002C542A /* GameStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStats.swift; sourceTree = "<group>"; };
 		DED4E84C298C0E26002C542A /* GameStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsView.swift; sourceTree = "<group>"; };
@@ -143,6 +151,7 @@
 				DE113B2029893D8E001F6BA3 /* HomeView.swift */,
 				DED4E84C298C0E26002C542A /* GameStatsView.swift */,
 				DEADD35C29914EA200999C2C /* SearchPlayerView.swift */,
+				DEADD3702992903900999C2C /* PlayerDetailView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -191,6 +200,7 @@
 				DED4E848298BE77A002C542A /* GameStats.swift */,
 				DED4E856298C92E6002C542A /* Player.swift */,
 				DEADD35E299166CA00999C2C /* News.swift */,
+				DEADD3742992943A00999C2C /* Team.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,6 +213,8 @@
 				DED4E850298C5E25002C542A /* MockStats.json */,
 				DE719071298C95D4003B4502 /* MockPlayers.json */,
 				DEADD3642991671B00999C2C /* MockNews.json */,
+				DEADD36E299287F600999C2C /* MockPlayerSportsIo.json */,
+				DEADD3762992974D00999C2C /* MockAllTeams.json */,
 			);
 			path = MockProvider;
 			sourceTree = "<group>";
@@ -282,6 +294,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE113B1729888C18001F6BA3 /* Preview Assets.xcassets in Resources */,
+				DEADD36F299287F600999C2C /* MockPlayerSportsIo.json in Resources */,
+				DEADD3772992974D00999C2C /* MockAllTeams.json in Resources */,
 				DE113B2629893EB5001F6BA3 /* Inter-Regular.ttf in Resources */,
 				DE719072298C95D4003B4502 /* MockPlayers.json in Resources */,
 				DEADD3652991671B00999C2C /* MockNews.json in Resources */,
@@ -302,6 +316,7 @@
 			files = (
 				DE113B3A29899A6D001F6BA3 /* ApiResponse.swift in Sources */,
 				DEADD36B2991C93100999C2C /* NewsSlider.swift in Sources */,
+				DEADD3712992903900999C2C /* PlayerDetailView.swift in Sources */,
 				DEADD35F299166CA00999C2C /* News.swift in Sources */,
 				DE113B2B29893F1C001F6BA3 /* CustomFont.swift in Sources */,
 				DED4E853298C89EE002C542A /* StatsTable.swift in Sources */,
@@ -317,6 +332,7 @@
 				DEADD35D29914EA200999C2C /* SearchPlayerView.swift in Sources */,
 				DE113B3029894B5E001F6BA3 /* LiveGameCard.swift in Sources */,
 				DED4E849298BE77A002C542A /* GameStats.swift in Sources */,
+				DEADD3752992943A00999C2C /* Team.swift in Sources */,
 				DE1C4D61298AA85700EF9D70 /* Extensions.swift in Sources */,
 				DEAB501E298F04F700E3A50C /* PillSelection.swift in Sources */,
 				DE113B2129893D8E001F6BA3 /* HomeView.swift in Sources */,

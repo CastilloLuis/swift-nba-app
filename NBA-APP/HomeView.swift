@@ -17,6 +17,7 @@ struct HomeView: View {
     @State private var offset = CGSize.zero
     @State var scrollToId: Int?
     @State var viewState = CGSize.zero
+    @State var navigateToSearch: Bool = false
     
     
     // Add player of the day card flip animation
@@ -37,14 +38,25 @@ struct HomeView: View {
                 NavigationStack {
                     ScrollView {
                         VStack {
-                            Text("Live")
-                                .customFont(.largeTitle)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.horizontal, 20)
-                                .padding(.bottom, -20)
+                            HStack(alignment: .center) {
+                                Text("Live")
+                                    .customFont(.largeTitle)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                Spacer()
+                                Button { navigateToSearch = true } label: {
+                                    Image(systemName: "magnifyingglass")
+                                        .customFont(.title2)
+                                }
+                                .foregroundColor(.black.opacity(0.7))
+                                .navigationDestination(isPresented: $navigateToSearch) {
+                                    SearchPlayerView()
+                                }
+                            }
+                            .padding(.horizontal, 20)
+                            .padding(.bottom, -20)
                             ScrollViewReader { scrollProxy in
                                 ScrollView(.horizontal, showsIndicators: false) {
-                                    HStack(spacing: 20) {
+                                    LazyHStack(spacing: 20) {
                                         ForEach(liveGames, id: \.id) { game in
                                             LiveGameCard(statsViewOpened: false, game: game)
                                                 .id(game.id)
@@ -78,13 +90,12 @@ struct HomeView: View {
                                 .padding(.horizontal, 20)
                                 .padding(.bottom, -20)
                             ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(spacing: 30) {
+                                LazyHStack(spacing: 30) {
                                     ForEach(latestGames, id: \.id) { game in
                                         RecentGameCard(game: game)
                                     }
                                     .padding(.vertical)
                                 }.padding()
-                                
                             }
                             
                             NewsSlider()

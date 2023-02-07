@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewsSlider: View {
+    var label: String = "News"
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
     @State var news: [News] = []
     @State var latestRandomNewImage: Int?
@@ -28,7 +29,7 @@ struct NewsSlider: View {
     
     var body: some View {
         NavigationStack {
-            Text("News")
+            Text(label)
                 .customFont(.largeTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 20)
