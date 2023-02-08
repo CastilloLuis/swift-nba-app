@@ -82,9 +82,6 @@ struct SearchPlayerView: View {
                             .sheet(isPresented: $navigateToDetailView) {
                                 PlayerDetailView()
                             }
-//                            .navigationDestination(isPresented: $navigateToDetailView) {
-//                                PlayerDetailView()
-//                            }
                         }
                         .foregroundColor(.black)
                         Divider()

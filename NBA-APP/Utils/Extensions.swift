@@ -44,6 +44,36 @@ extension Date {
     
         return Last7DaysFormat(datesAsString: stringDates, dates: dates)
     }
+    
+    func dateToHuman(_ dateStr: String) -> String {
+        let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        guard let formattedBirthdayDate = dateFormatter.date(from: dateStr) else { return "-" }
+        
+            dateFormatter.dateStyle = .long
+            dateFormatter.timeStyle = .none
+        return dateFormatter.string(from: formattedBirthdayDate)
+    }
+    
+    
+    func calculateAge(_ dateStr: String) -> String {
+        let today = Date.now
+        
+        let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            
+        guard let date = dateFormatter.date(from: dateStr) else {
+           return  "18"
+        }
+        
+        dateFormatter.dateFormat = "yyyy"
+        let todayYear = dateFormatter.string(from: today)
+        let birthdayYear = dateFormatter.string(from: date)
+
+        let age = Int(todayYear)! - Int(birthdayYear)!
+        
+        return String(age)
+    }
 }
 
 extension Color {
@@ -96,12 +126,23 @@ extension View {
 
 extension String{
      func toCurrencyFormat() -> String {
-        if let intValue = Int(self){
+        if let intValue = Int(self) {
            let numberFormatter = NumberFormatter()
             numberFormatter.locale = Locale.current
            numberFormatter.numberStyle = NumberFormatter.Style.currency
            return numberFormatter.string(from: NSNumber(value: intValue)) ?? ""
-      }
-    return ""
-  }
+        }
+         return ""
+    }
+
+
+    func dateToHuman(_ dateStr: String) -> String {
+        let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        guard let formattedBirthdayDate = dateFormatter.date(from: dateStr) else { return "-" }
+        
+            dateFormatter.dateStyle = .long
+            dateFormatter.timeStyle = .none
+        return dateFormatter.string(from: formattedBirthdayDate)
+    }
 }

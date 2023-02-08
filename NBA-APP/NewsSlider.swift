@@ -72,7 +72,7 @@ struct NewsSlider: View {
                     }
                 }
                 .padding(.horizontal, 20)
-                .frame(width: .infinity, height: 300)
+                .frame(maxWidth: .infinity, maxHeight: 300)
                 .tabViewStyle(.page(indexDisplayMode: .always))
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
                 .edgesIgnoringSafeArea(.vertical)

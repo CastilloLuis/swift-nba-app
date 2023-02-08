@@ -14,42 +14,11 @@ struct PlayerDetailView: View {
     init() {
         player  = getMockPlayerSports()[20]
         let teams = getAllTeamsSports()
-        let p = teams.filter {team in
+        team = teams.filter {team in
             team.key?.lowercased() == player.team?.lowercased()
         }[0]
-        print(p)
-        team = p
     }
-    
-    func calculateAge(_ dateStr: String) -> String {
-        let today = Date.now
-        
-        let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-            
-        guard let date = dateFormatter.date(from: dateStr) else {
-           return  "18"
-        }
-        
-        dateFormatter.dateFormat = "yyyy"
-        let todayYear = dateFormatter.string(from: today)
-        let birthdayYear = dateFormatter.string(from: date)
 
-        let age = Int(todayYear)! - Int(birthdayYear)!
-        
-        return String(age)
-    }
-    
-    func dateToHuman(_ dateStr: String) -> String {
-        let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        guard let formattedBirthdayDate = dateFormatter.date(from: dateStr) else { return "-" }
-        
-            dateFormatter.dateStyle = .long
-            dateFormatter.timeStyle = .none
-        return dateFormatter.string(from: formattedBirthdayDate)
-    }
-    
     func getPlayerHeadshot(_ playerId: Int) -> String {
         return "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/\(playerId).png"
     }
@@ -119,65 +88,25 @@ struct PlayerDetailView: View {
                             Text("\(player.height ?? 0) kg -")
                             Text(String(Float(Float(player.weight!)/Float(100))) + " m")
                             if let b = player.birthDate {
-                                Text("- \(calculateAge(b)) years")
+                                Text("- \(Date().calculateAge(b)) years")
                             }
                         }
                         .customFont(.subheadline)
                     }.frame(maxWidth: .infinity)
                     Spacer()
-                    VStack {
-                        Text("experience".uppercased())
-                            .customFont(.footnote)
-                            .foregroundColor(.black.opacity(0.7))
-                        HStack {
-                            Text("\(player.experience ?? 0) years")
-                        }
-                        .customFont(.subheadline)
-                    }.frame(maxWidth: .infinity)
+                    DataItemRow(label: "experience", value: "\(player.experience ?? 0) years")
                 }
                 Divider()
                 HStack {
-                    VStack {
-                        Text("college".uppercased())
-                            .customFont(.footnote)
-                            .foregroundColor(.black.opacity(0.7))
-                        HStack {
-                            Text(player.college!)
-                        }
-                        .customFont(.subheadline)
-                    }.frame(maxWidth: .infinity)
+                    DataItemRow(label: "college", value: player.college!)
                     Spacer()
-                    VStack {
-                        Text("COUNTRY".uppercased())
-                            .customFont(.footnote)
-                            .foregroundColor(.black.opacity(0.7))
-                        HStack {
-                            Text(player.birthCountry!)
-                        }
-                        .customFont(.subheadline)
-                    }.frame(maxWidth: .infinity)
+                    DataItemRow(label: "country", value: player.birthCountry!)
                 }
                 Divider()
                 HStack {
-                    VStack {
-                        Text("birthday".uppercased())
-                            .customFont(.footnote)
-                            .foregroundColor(.black.opacity(0.7))
-                        HStack {
-                            Text(dateToHuman(player.birthDate!))
-                        }
-                        .customFont(.subheadline)
-                    }.frame(maxWidth: .infinity)
+                    DataItemRow(label: "birthday", value: player.birthDate!)
                     Spacer()
-                    VStack {
-                        Text("salary".uppercased())
-                            .customFont(.footnote)
-                            .foregroundColor(.black.opacity(0.7))
-                        HStack {
-                            Text("\(player.salary ?? 0)".toCurrencyFormat())
-                        }
-                        .customFont(.subheadline)
-                    }.frame(maxWidth: .infinity)
+                    DataItemRow(label: "salary", value: "\(player.salary ?? 0)".toCurrencyFormat())
                 }
                 Divider()
             }
@@ -195,6 +124,19 @@ struct PlayerDetailView: View {
             NewsSlider(label: "Player News")
             Spacer()
         }
+    }
+    
+    func DataItemRow(label: String, value: String) -> some View {
+        return VStack {
+            Text(label.uppercased())
+                .customFont(.footnote)
+                .foregroundColor(.black.opacity(0.7))
+            HStack {
+                Text(value)
+            }
+            .customFont(.subheadline)
+        }
+        .frame(maxWidth: .infinity)
     }
 }
 
