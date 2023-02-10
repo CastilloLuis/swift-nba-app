@@ -25,24 +25,24 @@ struct RoundedCorner: Shape {
 }
 
 extension Date {
-    func getLast7Days(asString: Bool = true) -> Last7DaysFormat  {
-        let dateInWeek = Date()
-        let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "YYYY-MM-DD"
-
-        let calendar = Calendar.current
-        let dayOfWeek = calendar.component(.weekday, from: dateInWeek)
-        let weekdays = calendar.range(of: .weekday, in: .weekOfYear, for: dateInWeek.addingTimeInterval(60 * 60 * 24 * 7 * -1))!
-        let dates = (weekdays.lowerBound ..< weekdays.upperBound)
-            .compactMap { calendar.date(byAdding: .day, value: $0 - dayOfWeek, to: dateInWeek.addingTimeInterval(60 * 60 * 24 * 7 * -1)) }
-        var stringDates: [String] = []
-        
-        for date in dates {
-            let formattedDate = dateFormatter.string(from: date)
-            stringDates.append(formattedDate)
-        }
     
-        return Last7DaysFormat(datesAsString: stringDates, dates: dates)
+    func getDates(forLastNDays nDays: Int) -> [String] {
+        let cal = NSCalendar.current
+        // start with today
+        var date = cal.startOfDay(for: Date())
+
+        var arrDates = [String]()
+
+        for _ in 1 ... nDays {
+            // move back in time by one day:
+            date = cal.date(byAdding: Calendar.Component.day, value: -1, to: date)!
+
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let dateString = dateFormatter.string(from: date)
+            arrDates.append(dateString)
+        }
+        return arrDates
     }
     
     func dateToHuman(_ dateStr: String) -> String {

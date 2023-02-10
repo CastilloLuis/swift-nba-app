@@ -11,6 +11,7 @@ struct HomeView: View {
     @EnvironmentObject var network: Network
     @State var liveGames: [LiveGame] = getMockGames()
     @State var latestGames: [LiveGame] =  getMockGames()
+    @State var news: [News] = []
     
     @Namespace var namespace
     @State var selectedGameId: Int?
@@ -19,10 +20,12 @@ struct HomeView: View {
     @State var viewState = CGSize.zero
     @State var navigateToSearch: Bool = false
     
-    
     // Add player of the day card flip animation
     func getLiveGames() async {
-        let response = await network.getGames(date: "2023-01-28")
+        let date = Date()
+        let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+        let response = await network.getGames(date: dateFormatter.string(from: date))
         liveGames = response
     }
     
@@ -62,7 +65,7 @@ struct HomeView: View {
                                                 .id(game.id)
                                                 .matchedGeometryEffect(id: game.id, in: namespace)
                                                 .onTapGesture {
-                                                    withAnimation(.spring(response: 0.5)) {
+                                                    withAnimation {
                                                         selectedGameId = game.id
                                                     }
                                                 }
@@ -79,8 +82,8 @@ struct HomeView: View {
                                     }
                                 }
                                 .task {
-                    //                await getLiveGames()
-                    //                await getLatestGames()
+//                                    await getLiveGames()
+//                                    await getLatestGames()
                                 }
                             }
                             .padding(.bottom, -20)
@@ -98,19 +101,23 @@ struct HomeView: View {
                                 }.padding()
                             }
                             
-                            NewsSlider()
+                            NewsSlider(news: $news)
                             
                             Spacer()
                         }
                         .padding(.top, 80)
                     }
                 }
+                .task {
+                    let nbaNews = await network.getNews()
+                    news = nbaNews
+                }
             } else {
                 VStack {
                     LiveGameCard(statsViewOpened: true, game: getMockGames()[2])
                         .onTapGesture {
                             let prevId = selectedGameId
-                            withAnimation(.spring(response: 0.5)) {
+                            withAnimation {
                                 selectedGameId = nil
                             }
                             scrollToId = prevId

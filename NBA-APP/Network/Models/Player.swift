@@ -38,31 +38,31 @@ struct Player: Codable {
 }
 
 //SPORTS.IO DATA
-struct PlayerSportsIo: Codable {
-    let playerID: Int?
-    let sportsDataID, status: String?
-    let teamID: Int?
-    let team: String?
-    let jersey: Int?
-    let positionCategory, position, firstName, lastName: String?
-    let height, weight: Int?
-    let birthDate, birthCity, birthState, birthCountry: String?
-    let highSchool, college: String?
-    let salary: Int?
-    let photoURL: String?
-    let experience: Int?
-    let sportRadarPlayerID: String?
-    let rotoworldPlayerID, rotoWirePlayerID, fantasyAlarmPlayerID, statsPlayerID: Int?
-    let sportsDirectPlayerID, xmlTeamPlayerID: Int?
-    let injuryStatus, injuryBodyPart, injuryStartDate, injuryNotes: String?
-    let fanDuelPlayerID, draftKingsPlayerID, yahooPlayerID: Int?
-    let fanDuelName, draftKingsName, yahooName, depthChartPosition: String?
-    let depthChartOrder, globalTeamID: Int?
-    let fantasyDraftName: String?
-    let fantasyDraftPlayerID, usaTodayPlayerID: Int?
-    let usaTodayHeadshotURL, usaTodayHeadshotNoBackgroundURL: String?
-    let usaTodayHeadshotUpdated, usaTodayHeadshotNoBackgroundUpdated: String?
-    let nbaDotCOMPlayerID: Int?
+struct PlayerSportsIo: Equatable, Codable {
+    var playerID: Int?
+    var sportsDataID, status: String?
+    var teamID: Int?
+    var team: String?
+    var jersey: Int?
+    var positionCategory, position, firstName, lastName: String?
+    var height, weight: Int?
+    var birthDate, birthCity, birthState, birthCountry: String?
+    var highSchool, college: String?
+    var salary: Int?
+    var photoURL: String?
+    var experience: Int?
+    var sportRadarPlayerID: String?
+    var rotoworldPlayerID, rotoWirePlayerID, fantasyAlarmPlayerID, statsPlayerID: Int?
+    var sportsDirectPlayerID, xmlTeamPlayerID: Int?
+    var injuryStatus, injuryBodyPart, injuryStartDate, injuryNotes: String?
+    var fanDuelPlayerID, draftKingsPlayerID, yahooPlayerID: Int?
+    var fanDuelName, draftKingsName, yahooName, depthChartPosition: String?
+    var depthChartOrder, globalTeamID: Int?
+    var fantasyDraftName: String?
+    var fantasyDraftPlayerID, usaTodayPlayerID: Int?
+    var usaTodayHeadshotURL, usaTodayHeadshotNoBackgroundURL: String?
+    var usaTodayHeadshotUpdated, usaTodayHeadshotNoBackgroundUpdated: String?
+    var nbaDotCOMPlayerID: Int?
 
     enum CodingKeys: String, CodingKey {
         case playerID = "PlayerID"

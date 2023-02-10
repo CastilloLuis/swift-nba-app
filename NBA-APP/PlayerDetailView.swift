@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct PlayerDetailView: View {
-    var player: PlayerSportsIo
-    var team: TeamSportsIo?
+    @EnvironmentObject var network: Network
     
-    init() {
-        player  = getMockPlayerSports()[20]
+    @Binding var player: PlayerSportsIo
+    @State var team: TeamSportsIo?
+    @State var news: [News] = []
+    
+    func getSelectedTeam() {
         let teams = getAllTeamsSports()
-        team = teams.filter {team in
+        team = teams.filter { team in
             team.key?.lowercased() == player.team?.lowercased()
         }[0]
     }
-
+    
     func getPlayerHeadshot(_ playerId: Int) -> String {
         return "https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/\(playerId).png"
     }
@@ -27,8 +29,13 @@ struct PlayerDetailView: View {
         return "https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/\(teamCode).png"
     }
     
+    func getPlayerNews() async {
+        guard let pId = player.playerID else { fatalError("Invalid Player Id") }
+        news = await network.getNews(playerId: pId)
+    }
+    
     var body: some View {
-        VStack {
+        NavigationStack {
             HStack {
                 AsyncImage(url: URL(string: getPlayerHeadshot(player.nbaDotCOMPlayerID ?? 2222))) { image in
                     image
@@ -45,7 +52,7 @@ struct PlayerDetailView: View {
                     Text(player.fantasyDraftName ?? "-")
                         .customFont(.title3)
                 }
-                .foregroundColor(Color(hex: team?.tertiaryColor ?? "FFFFFF"))
+                .foregroundColor(Color(hex: "FFFFFF"))
                 .frame(alignment: .leading)
                 .padding(.bottom, -40)
             }
@@ -74,6 +81,7 @@ struct PlayerDetailView: View {
                     .position(x: 50, y: 50)
                 }
                 .frame(maxWidth: .infinity, maxHeight: 210)
+                .background(.black.opacity(0.5))
                 .background(Color(hex: team?.primaryColor ?? "FFFFFF"))
             )
             
@@ -121,8 +129,12 @@ struct PlayerDetailView: View {
             }
             
             
-            NewsSlider(label: "Player News")
+            NewsSlider(label: "Player News", news: $news)
             Spacer()
+        }
+        .task {
+            getSelectedTeam()
+            await getPlayerNews()
         }
     }
     
@@ -142,6 +154,7 @@ struct PlayerDetailView: View {
 
 struct PlayerDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerDetailView()
+        PlayerDetailView(player: .constant(getMockPlayerSports()[0]))
+            .environmentObject(Network())
     }
 }

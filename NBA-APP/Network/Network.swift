@@ -10,28 +10,39 @@ import Foundation
 
 class Network: ObservableObject {
     let API_URL = "https://api-nba-v1.p.rapidapi.com"
+    let API_URL_SPORTSIO = "https://api.sportsdata.io/v3/nba/scores/json"
     
-    func getUrlRequestObject(_ pathname: String) -> URLRequest {
-        guard let url = URL(string: API_URL + "\(pathname)") else { fatalError("Missing URL") }
+    func getUrlRequestObject(_ pathname: String, sportsIoApi: Bool = false) -> URLRequest {
+        guard let url = URL(string: sportsIoApi ? API_URL_SPORTSIO + "\(pathname)" : API_URL + "\(pathname)") else { fatalError("Missing URL") }
         var urlRequest = URLRequest(url: url)
+        if (sportsIoApi) {
+            urlRequest.setValue("205ac79f2c6540d89722f000faec61d7", forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
+        } else {
             urlRequest.setValue("abbdf8f6aamsh109476df4d902a9p165517jsn1f70d6610950", forHTTPHeaderField: "X-RapidAPI-Key")
+        }
 
         return urlRequest
     }
     
-    func callApi(urlRequest: URLRequest) async throws -> Data {
+    func callApi(urlRequest: URLRequest, sportsIoApi: Bool = false) async throws -> Data {
         let (_data, _response) = try await URLSession.shared.data(for: urlRequest)
-        
         let response = _response as? HTTPURLResponse
+        
         if response?.statusCode != 200 { fatalError("An error has ocurred while fetching API. Error: \(String(describing: response))") }
         
-        let decodedData = try JSONDecoder().decode(ApiBaseResponse.self, from: _data)
-        guard decodedData.errors.count == 0 else {
-            fatalError("An error has ocurred while decoding API response: \(decodedData.errors)")
+        if (!sportsIoApi) {
+            let decodedData = try JSONDecoder().decode(ApiBaseResponse.self, from: _data)
+            
+            guard !sportsIoApi && decodedData.errors.count == 0 else {
+                fatalError("An error has ocurred while decoding API response: \(decodedData.errors)")
+            }
+            
+            let serializedResponse = try JSONEncoder().encode(decodedData.response)
+            return serializedResponse
+            
         }
-        let serializedResponse = try JSONEncoder().encode(decodedData.response)
-
-        return serializedResponse;
+        
+        return _data
     }
 
     func getGames(date: String, live: Bool = false) async -> [LiveGame] {
@@ -64,9 +75,12 @@ class Network: ObservableObject {
     
     func getLastWeekHistoryGames() async -> [LiveGame] {
         var games: [LiveGame] = []
-        let dates = Date().getLast7Days().datesAsString
-        
+        let dates = Date().getDates(forLastNDays: 7)
+        print("**********")
+        print(dates)
+        print("**********")
         print(games.count)
+        
 
         await withTaskGroup(of: [LiveGame].self) { group in
             for date in dates {
@@ -120,12 +134,29 @@ class Network: ObservableObject {
     }
     
     
-}
+    func getNews(playerId: Int = 0) async -> [News] {
+        var news: [News] = []
+        let path = playerId != 0 ? "/NewsByPlayerID/\(playerId)" : "/News"
+        
+        let urlRequest = getUrlRequestObject(path, sportsIoApi: true)
 
-struct Testing: Identifiable {
-    var id = UUID()
-    var team: Team
-    var player: PlayerData
+        do {
+            let apiResponse = try? await callApi(urlRequest: urlRequest, sportsIoApi: true)
+    
+            guard let apiResponse = apiResponse else {
+                return []
+            }
+            let decodedApiResponse = try JSONDecoder().decode([News].self, from: apiResponse)
+            
+            news = decodedApiResponse
+            
+        } catch {
+            print("Error: ", error)
+        }
+        
+        return news
+    }
+    
 }
 
 // OLD WAY

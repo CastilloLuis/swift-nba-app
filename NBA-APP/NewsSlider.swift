@@ -10,7 +10,7 @@ import SwiftUI
 struct NewsSlider: View {
     var label: String = "News"
     private let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
-    @State var news: [News] = []
+    @Binding var news: [News]
     @State var latestRandomNewImage: Int?
     @State private var showWebView: Bool = false
     @State private var webViewUrl: String = "https://www.google.com"
@@ -28,7 +28,7 @@ struct NewsSlider: View {
     }
     
     var body: some View {
-        NavigationStack {
+        VStack {
             Text(label)
                 .customFont(.largeTitle)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -72,12 +72,14 @@ struct NewsSlider: View {
                     }
                 }
                 .padding(.horizontal, 20)
-                .frame(maxWidth: .infinity, maxHeight: 300)
+                .frame(maxWidth: .infinity)
+                .frame(height: 300)
                 .tabViewStyle(.page(indexDisplayMode: .always))
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
                 .edgesIgnoringSafeArea(.vertical)
                 .padding(.top, -10)
                 .onReceive(timer, perform: { _ in
+                    if (news.count == 1) { return }
                     withAnimation {
                         if (selectedSlide == news.count) {
                             selectedSlide = 0
@@ -88,14 +90,11 @@ struct NewsSlider: View {
                 })
             }
         }
-        .task {
-            news = await getMockNews()
-        }
     }
 }
 
 struct NewsSlider_Previews: PreviewProvider {
     static var previews: some View {
-        NewsSlider()
+        NewsSlider(news: .constant(getMockNews()))
     }
 }

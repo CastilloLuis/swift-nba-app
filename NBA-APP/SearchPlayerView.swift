@@ -15,6 +15,7 @@ class TestsViewModel: ObservableObject {
 struct SearchPlayerView: View {
     @StateObject var viewModel = TestsViewModel()
     let players: [PlayerSportsIo] = getMockPlayerSports()
+    @State var selectedPlayer: PlayerSportsIo = PlayerSportsIo()
     @State var searchResults: [PlayerSportsIo] = []
     @State var navigateToDetailView: Bool = false
     
@@ -51,6 +52,7 @@ struct SearchPlayerView: View {
                 LazyVStack(alignment: .leading) {
                     ForEach(searchResults, id: \.playerID) { result in
                         Button {
+                            selectedPlayer = result
                             navigateToDetailView = true
                         } label: {
                             HStack {
@@ -80,7 +82,7 @@ struct SearchPlayerView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.bottom, 10)
                             .sheet(isPresented: $navigateToDetailView) {
-                                PlayerDetailView()
+                                PlayerDetailView(player: $selectedPlayer)
                             }
                         }
                         .foregroundColor(.black)
@@ -97,6 +99,6 @@ struct SearchPlayerView: View {
 
 struct SearchPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchPlayerView()
+        SearchPlayerView(selectedPlayer: getMockPlayerSports()[0])
     }
 }

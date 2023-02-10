@@ -161,7 +161,6 @@ func getAllTeamsSports() -> [TeamSportsIo] {
         } catch {
             print("error: ", error)
         }
-
     }
     return []
 }
