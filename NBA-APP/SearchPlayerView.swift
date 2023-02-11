@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-class TestsViewModel: ObservableObject {
+class SearchViewModel: ObservableObject {
     @Published var searchKey = ""
     @Published var executionTimes = 0
 }
 
 struct SearchPlayerView: View {
-    @StateObject var viewModel = TestsViewModel()
+    @StateObject var viewModel = SearchViewModel()
     let players: [PlayerSportsIo] = getMockPlayerSports()
     @State var selectedPlayer: PlayerSportsIo = PlayerSportsIo()
     @State var searchResults: [PlayerSportsIo] = []

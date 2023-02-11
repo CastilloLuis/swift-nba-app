@@ -38,8 +38,8 @@ class Network: ObservableObject {
             }
             
             let serializedResponse = try JSONEncoder().encode(decodedData.response)
-            return serializedResponse
             
+            return serializedResponse
         }
         
         return _data
@@ -73,14 +73,34 @@ class Network: ObservableObject {
         return games
     }
     
+    func getGamePerId(gameId: Int) async -> [LiveGame] {
+        var game: [LiveGame] = []
+        var urlRequest = getUrlRequestObject("/games")
+        var urlQueryItems: [URLQueryItem] = []
+            urlQueryItems.append(URLQueryItem(name: "id", value: "\(gameId)"))
+        
+        urlRequest.url?.append(queryItems: urlQueryItems)
+        
+        do {
+            let apiResponse = try? await callApi(urlRequest: urlRequest)
+            
+            guard let apiResponse = apiResponse else {
+                return []
+            }
+            
+            let decodedApiResponse = try JSONDecoder().decode([LiveGame].self, from: apiResponse)
+            game = decodedApiResponse
+            
+        } catch {
+            print("Error: ", error)
+        }
+        
+        return game
+    }
+    
     func getLastWeekHistoryGames() async -> [LiveGame] {
         var games: [LiveGame] = []
         let dates = Date().getDates(forLastNDays: 7)
-        print("**********")
-        print(dates)
-        print("**********")
-        print(games.count)
-        
 
         await withTaskGroup(of: [LiveGame].self) { group in
             for date in dates {
@@ -93,8 +113,6 @@ class Network: ObservableObject {
                 for game in gamesPerDate { games.append(game) }
             }
         }
-
-        print(games.count)
 
         return games
     }
@@ -127,7 +145,7 @@ class Network: ObservableObject {
         let decodedApiResponse = getMockPlayers().filter { $0.pos != nil }
         
         let groupByTeam = Dictionary(grouping: decodedApiResponse) { (player) -> String in
-            return player.team.nickname
+            return player.team.nickname ?? "-"
         }
         
         return groupByTeam

@@ -28,6 +28,7 @@
 		DE719072298C95D4003B4502 /* MockPlayers.json in Resources */ = {isa = PBXBuildFile; fileRef = DE719071298C95D4003B4502 /* MockPlayers.json */; };
 		DE719075298CBC73003B4502 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = DE719074298CBC73003B4502 /* SkeletonUI */; };
 		DE719077298CBEB3003B4502 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE719076298CBEB3003B4502 /* Modifiers.swift */; };
+		DE8A12692997FA7D00407659 /* GameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A12682997FA7D00407659 /* GameDetailView.swift */; };
 		DEAB501C298EEA8A00E3A50C /* SummaryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAB501B298EEA8A00E3A50C /* SummaryTable.swift */; };
 		DEAB501E298F04F700E3A50C /* PillSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAB501D298F04F700E3A50C /* PillSelection.swift */; };
 		DEADD35D29914EA200999C2C /* SearchPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEADD35C29914EA200999C2C /* SearchPlayerView.swift */; };
@@ -71,6 +72,7 @@
 		DE1C4D62298AAF6E00EF9D70 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		DE719071298C95D4003B4502 /* MockPlayers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockPlayers.json; sourceTree = "<group>"; };
 		DE719076298CBEB3003B4502 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		DE8A12682997FA7D00407659 /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
 		DEAB501B298EEA8A00E3A50C /* SummaryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTable.swift; sourceTree = "<group>"; };
 		DEAB501D298F04F700E3A50C /* PillSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillSelection.swift; sourceTree = "<group>"; };
 		DEADD35C29914EA200999C2C /* SearchPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlayerView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				DED4E84C298C0E26002C542A /* GameStatsView.swift */,
 				DEADD35C29914EA200999C2C /* SearchPlayerView.swift */,
 				DEADD3702992903900999C2C /* PlayerDetailView.swift */,
+				DE8A12682997FA7D00407659 /* GameDetailView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				DE719077298CBEB3003B4502 /* Modifiers.swift in Sources */,
 				DED4E855298C9276002C542A /* PlayerStatsTable.swift in Sources */,
 				DE113B36298958CD001F6BA3 /* LiveGame.swift in Sources */,
+				DE8A12692997FA7D00407659 /* GameDetailView.swift in Sources */,
 				DEADD35D29914EA200999C2C /* SearchPlayerView.swift in Sources */,
 				DE113B3029894B5E001F6BA3 /* LiveGameCard.swift in Sources */,
 				DED4E849298BE77A002C542A /* GameStats.swift in Sources */,

@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Welcome
 struct ApiBaseResponse: Codable {
     let get: String?
-    let parameters: Parameters?
+    let parameters: JSONAny?
     let errors: [JSONAny]
     let results: Int
     let response: [JSONAny]
@@ -19,9 +19,4 @@ struct ApiBaseResponse: Codable {
         case get = "get"
         case parameters, errors, results, response
     }
-}
-
-// MARK: - Parameters
-struct Parameters: Codable {
-    let date: String
 }

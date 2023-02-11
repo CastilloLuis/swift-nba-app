@@ -28,8 +28,10 @@ struct GameStatsView: View {
     @State var selectedTab: StatsTab = statisticsTabs[0]
     @State var selectedTeamTab: PillSelectionTabs?
     @State var topPerformers: [PlayerData] = []
+    var gameStats: [GameStats]?
+    var game: LiveGame?
     
-    var gameStats = getMockStats()
+//    var gameStats = getMockStats()
     
     func getTopPerformers() async {
         let teams = await network.getPlayersStatsPerGame(gameId: 0)
@@ -61,11 +63,18 @@ struct GameStatsView: View {
             }
                 switch selectedTab.type {
                     case .summary:
-                    SummaryTable(topPerformers: topPerformers)
+                        SummaryTable(topPerformers: topPerformers, game: game!)
                     case .players:
                         PlayerStatsTable(players: getMockPlayers())
                     case .stats:
-                        StatsTable(homeLogo: gameStats[0].team.logo, visitorLogo: gameStats[1].team.logo, homeStats: gameStats[0].statistics[0], visitorStats: gameStats[1].statistics[0])
+                        if let _gameStats = gameStats {
+                            StatsTable(
+                                homeLogo: (_gameStats[0].team?.logo!)!,
+                                visitorLogo: (_gameStats[1].team?.logo!)!,
+                                homeStats: _gameStats[0].statistics![0],
+                                visitorStats: _gameStats[1].statistics![0]
+                            )
+                        }
                 }
         }
         .padding(.horizontal, 20)

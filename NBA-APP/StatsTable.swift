@@ -12,15 +12,15 @@ struct StatsTable: View {
     var visitorLogo: String
     var homeStats: Statistic
     var visitorStats: Statistic
-    
-    func HorizontalStat(_ hStat: Int, _ vStat: Int, _ label: String) -> some View {
+
+    func HorizontalStat(_ hStat: Int?, _ vStat: Int?, _ label: String) -> some View {
         return VStack{
             HStack {
-                Text("\(hStat)").customFont(.footnote2)
+                Text("\(hStat ?? 0)").customFont(.footnote2)
                 Spacer()
                 Text(label.uppercased()).customFont(.footnote)
                 Spacer()
-                Text("\(vStat)").customFont(.footnote2)
+                Text("\(vStat ?? 0)").customFont(.footnote2)
             }
             .frame(height: 30)
             Divider()
@@ -54,16 +54,18 @@ struct StatsTable: View {
             .frame(maxWidth: .infinity)
             ScrollView {
                 VStack {
-                        HorizontalStat(homeStats.points, visitorStats.points, "Points")
-                        HorizontalStat(homeStats.pointsInPaint, visitorStats.pointsInPaint, "Points in the paint")
-                        HorizontalStat(homeStats.steals, visitorStats.steals, "Steals")
-                        HorizontalStat(homeStats.fga, visitorStats.fga, "FGA")
-                        HorizontalStat(homeStats.offReb, visitorStats.offReb, "Offense REB")
-                        HorizontalStat(homeStats.defReb, visitorStats.defReb, "Defense REB")
-                        HorizontalStat(homeStats.assists, visitorStats.assists, "Assists")
-                        HorizontalStat(homeStats.pFouls, visitorStats.pFouls, "Fouls")
-                        HorizontalStat(homeStats.turnovers, visitorStats.turnovers, "Turnovers")
-                        HorizontalStat(homeStats.blocks, visitorStats.blocks, "Blocks")
+                    if let hS = homeStats, let vS = visitorStats {
+                        HorizontalStat(hS.points, vS.points, "Points")
+                        HorizontalStat(hS.pointsInPaint, vS.pointsInPaint, "Points in the paint")
+                        HorizontalStat(hS.steals, vS.steals, "Steals")
+                        HorizontalStat(hS.fga, vS.fga, "FGA")
+                        HorizontalStat(hS.offReb, vS.offReb, "Offense REB")
+                        HorizontalStat(hS.defReb, vS.defReb, "Defense REB")
+                        HorizontalStat(hS.assists, vS.assists, "Assists")
+                        HorizontalStat(hS.pFouls, vS.pFouls, "Fouls")
+                        HorizontalStat(hS.turnovers, vS.turnovers, "Turnovers")
+                        HorizontalStat(hS.blocks, vS.blocks, "Blocks")
+                    }
                 }
                 .frame(maxWidth: .infinity)
             }
@@ -74,6 +76,11 @@ struct StatsTable: View {
 
 struct StatsTable_Previews: PreviewProvider {
     static var previews: some View {
-        StatsTable(homeLogo: getMockStats()[0].team.logo, visitorLogo: getMockStats()[0].team.logo, homeStats: getMockStats()[0].statistics[0], visitorStats: getMockStats()[1].statistics[0])
+        StatsTable(
+            homeLogo: "https://www.pngitem.com/pimgs/m/146-1462843_golden-state-logo-png-golden-state-warriors-new.png",
+            visitorLogo: "https://www.pngitem.com/pimgs/m/146-1462843_golden-state-logo-png-golden-state-warriors-new.png",
+            homeStats: (getMockStats()[0].statistics?[0])!,
+            visitorStats: (getMockStats()[1].statistics?[0])!
+        )
     }
 }

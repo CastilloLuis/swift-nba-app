@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SummaryTable: View {
     var topPerformers: [PlayerData] = []
+    var game: LiveGame
     
     func sumTotalPoints(points: [String]) -> String {
         if (points.count == 0) { return "-" }
@@ -64,9 +65,9 @@ struct SummaryTable: View {
                 }
                 .frame(height: 10)
                 Divider()
-                HorizontalScoreTable(getMockGames()[0], true)
+                HorizontalScoreTable(game, true)
                 Divider()
-                HorizontalScoreTable(getMockGames()[0], false)
+                HorizontalScoreTable(game, false)
                 Divider()
             }
             .padding(.bottom, 30)
@@ -81,7 +82,7 @@ struct SummaryTable: View {
                             VStack {
                                 Text("\(player.player.firstname ?? "-") \(player.player.lastname ?? "-")")
                                     .customFont(.caption)
-                                Text("\(player.team.code)" + " - " + "\(player.pos ?? "")")
+                                Text("\(String(describing: player.team.code))" + " - " + "\(player.pos ?? "")")
                                     .customFont(.caption)
                                     .foregroundColor(.black.opacity(0.5))
                             }
@@ -118,6 +119,7 @@ struct SummaryTable: View {
 
 struct SummaryTable_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryTable()
+        SummaryTable(game: getMockGames()[0])
     }
 }
+
