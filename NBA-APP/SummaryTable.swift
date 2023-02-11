@@ -82,7 +82,7 @@ struct SummaryTable: View {
                             VStack {
                                 Text("\(player.player.firstname ?? "-") \(player.player.lastname ?? "-")")
                                     .customFont(.caption)
-                                Text("\(String(describing: player.team.code))" + " - " + "\(player.pos ?? "")")
+                                Text("\(player.team.code ?? "-") - \(player.pos ?? "-")")
                                     .customFont(.caption)
                                     .foregroundColor(.black.opacity(0.5))
                             }

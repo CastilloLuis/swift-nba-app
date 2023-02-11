@@ -140,15 +140,43 @@ class Network: ObservableObject {
     }
     
     
-    func getPlayersStatsPerGame(gameId: Int?) async -> Dictionary<String, Array<PlayerData>> {
+//    func getPlayersStatsPerGame(gameId: Int?) async -> Dictionary<String, Array<PlayerData>> {
+//
+//        let decodedApiResponse = getMockPlayers().filter { $0.pos != nil }
+//
+//        let groupByTeam = Dictionary(grouping: decodedApiResponse) { (player) -> String in
+//            return player.team.nickname ?? "-"
+//        }
+//
+//        return groupByTeam
+//    }
+    
+    func getPlayersStatsPerGame(gameId: Int) async -> [String : [PlayerData]] {
+        var groupByTeam: [String : [PlayerData]] = [:]
+        var urlRequest = getUrlRequestObject("/players/statistics")
+            urlRequest.url?.append(queryItems: [URLQueryItem(name: "game", value: "\(gameId)")])
         
-        let decodedApiResponse = getMockPlayers().filter { $0.pos != nil }
-        
-        let groupByTeam = Dictionary(grouping: decodedApiResponse) { (player) -> String in
-            return player.team.nickname ?? "-"
+        do {
+            let apiResponse = try? await callApi(urlRequest: urlRequest)
+            
+            guard let apiResponse = apiResponse else {
+                return [:]
+            }
+            
+            let decodedApiResponse = try JSONDecoder().decode([PlayerData].self, from: apiResponse)
+            
+            let gp = Dictionary(grouping: decodedApiResponse) { (player) -> String in
+                return player.team.nickname ?? "-"
+            }
+            
+            groupByTeam = gp
+            
+        } catch {
+            print("Error", error)
         }
         
         return groupByTeam
+        
     }
     
     

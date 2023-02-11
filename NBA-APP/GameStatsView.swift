@@ -31,10 +31,8 @@ struct GameStatsView: View {
     var gameStats: [GameStats]?
     var game: LiveGame?
     
-//    var gameStats = getMockStats()
-    
-    func getTopPerformers() async {
-        let teams = await network.getPlayersStatsPerGame(gameId: 0)
+    func getTopPerformers(gameId: Int) async {
+        let teams = await network.getPlayersStatsPerGame(gameId: gameId)
         let teamsKeys = Array(teams.keys)
         topPerformers = []
         print(teamsKeys)
@@ -79,6 +77,9 @@ struct GameStatsView: View {
         }
         .padding(.horizontal, 20)
         .background(.white)
+        .task {
+            await getTopPerformers(gameId: (game?.id!)!)
+        }
     }
     
     func GameStatsTabs() -> some View {
@@ -102,9 +103,6 @@ struct GameStatsView: View {
                                 .padding(.bottom, 1)
                                 .background(Color(hex: "#FFD200").opacity(selectedTab.type == tab.type ? 1: 0))
                         )
-                        .task {
-                            await getTopPerformers()
-                        }
                 }
                 Spacer()
             }
