@@ -10,7 +10,7 @@ import SwiftUI
 var statsTitle = ["min", "reb", "ast", "pts"]
 
 struct PlayerStatsTable: View {
-    var players: [PlayerData] = getMockPlayers()
+    @Binding var players: [PlayerData]
     
     var body: some View {
         VStack {
@@ -43,6 +43,6 @@ struct PlayerStatsTable: View {
 
 struct PlayerStatsTable_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerStatsTable(players: getMockPlayers())
+        PlayerStatsTable(players: .constant(getMockPlayers()))
     }
 }

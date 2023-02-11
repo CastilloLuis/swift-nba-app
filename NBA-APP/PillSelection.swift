@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PillSelectionTabs {
+struct PillSelectionTabs: Equatable {
     let id = UUID()
     let label: String
 }

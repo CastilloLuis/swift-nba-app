@@ -28,14 +28,21 @@ struct GameStatsView: View {
     @State var selectedTab: StatsTab = statisticsTabs[0]
     @State var selectedTeamTab: PillSelectionTabs?
     @State var topPerformers: [PlayerData] = []
+    @State var teamTabs: [String] = []
+    @State var teamPlayers: [String : [PlayerData]] = [:]
+    @State var selectedPlayers: [PlayerData] = []
+    
     var gameStats: [GameStats]?
     var game: LiveGame?
     
     func getTopPerformers(gameId: Int) async {
         let teams = await network.getPlayersStatsPerGame(gameId: gameId)
         let teamsKeys = Array(teams.keys)
+        teamPlayers = teams
+        teamTabs = teamsKeys
         topPerformers = []
-        print(teamsKeys)
+        selectedPlayers = teams[teamsKeys[0]]!
+        
         for key in teamsKeys {
             let player = teams[key]?.max{a, b in a.points! < b.points!}
             if let p = player {
@@ -50,12 +57,14 @@ struct GameStatsView: View {
         
             if (selectedTab.type == StatsTabsTypes.players) {
                 VStack {
-                    PillSelection(
-                        tabs: [
-                            PillSelectionTabs(label: "Heat"),
-                            PillSelectionTabs(label: "Nets")
-                        ]
-                    ) { item in selectedTeamTab = item }
+                    if teamTabs.count > 0 {
+                        PillSelection(
+                            tabs: [
+                                PillSelectionTabs(label: teamTabs[0]),
+                                PillSelectionTabs(label: teamTabs[1])
+                            ]
+                        ) { item in selectedTeamTab = item }
+                    }
                     Divider().padding(.top, 10)
                 }.padding(.bottom, 10)
             }
@@ -63,7 +72,7 @@ struct GameStatsView: View {
                     case .summary:
                         SummaryTable(topPerformers: topPerformers, game: game!)
                     case .players:
-                        PlayerStatsTable(players: getMockPlayers())
+                        PlayerStatsTable(players: $selectedPlayers)
                     case .stats:
                         if let _gameStats = gameStats {
                             StatsTable(
@@ -79,6 +88,11 @@ struct GameStatsView: View {
         .background(.white)
         .task {
             await getTopPerformers(gameId: (game?.id!)!)
+        }
+        .onChange(of: selectedTeamTab) { value in
+            if let label = value?.label {
+                selectedPlayers = teamPlayers[label] ?? []
+            }
         }
     }
     
