@@ -112,7 +112,7 @@ struct PlayerDetailView: View {
                 }
                 Divider()
                 HStack {
-                    DataItemRow(label: "birthday", value: player.birthDate!)
+                    DataItemRow(label: "birthday", value: Date().dateToHuman(player.birthDate!))
                     Spacer()
                     DataItemRow(label: "salary", value: "\(player.salary ?? 0)".toCurrencyFormat())
                 }
