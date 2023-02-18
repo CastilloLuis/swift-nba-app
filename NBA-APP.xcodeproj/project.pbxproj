@@ -23,6 +23,7 @@
 		DE113B36298958CD001F6BA3 /* LiveGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113B35298958CD001F6BA3 /* LiveGame.swift */; };
 		DE113B3829895931001F6BA3 /* JSONAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113B3729895931001F6BA3 /* JSONAny.swift */; };
 		DE113B3A29899A6D001F6BA3 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113B3929899A6D001F6BA3 /* ApiResponse.swift */; };
+		DE14AC7629A1506D004EB5BB /* TeamsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE14AC7529A1506D004EB5BB /* TeamsListView.swift */; };
 		DE1C4D61298AA85700EF9D70 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C4D60298AA85700EF9D70 /* Extensions.swift */; };
 		DE1C4D63298AAF6E00EF9D70 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C4D62298AAF6E00EF9D70 /* Mock.swift */; };
 		DE719072298C95D4003B4502 /* MockPlayers.json in Resources */ = {isa = PBXBuildFile; fileRef = DE719071298C95D4003B4502 /* MockPlayers.json */; };
@@ -68,6 +69,7 @@
 		DE113B35298958CD001F6BA3 /* LiveGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveGame.swift; sourceTree = "<group>"; };
 		DE113B3729895931001F6BA3 /* JSONAny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONAny.swift; sourceTree = "<group>"; };
 		DE113B3929899A6D001F6BA3 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		DE14AC7529A1506D004EB5BB /* TeamsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsListView.swift; sourceTree = "<group>"; };
 		DE1C4D60298AA85700EF9D70 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DE1C4D62298AAF6E00EF9D70 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		DE719071298C95D4003B4502 /* MockPlayers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockPlayers.json; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				DEADD35C29914EA200999C2C /* SearchPlayerView.swift */,
 				DEADD3702992903900999C2C /* PlayerDetailView.swift */,
 				DE8A12682997FA7D00407659 /* GameDetailView.swift */,
+				DE14AC7529A1506D004EB5BB /* TeamsListView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				DE113B3329894D45001F6BA3 /* Network.swift in Sources */,
 				DED4E84D298C0E26002C542A /* GameStatsView.swift in Sources */,
 				DE113B2E29894737001F6BA3 /* RecentGameCard.swift in Sources */,
+				DE14AC7629A1506D004EB5BB /* TeamsListView.swift in Sources */,
 				DEADD3692991B8C100999C2C /* WebView.swift in Sources */,
 				DE719077298CBEB3003B4502 /* Modifiers.swift in Sources */,
 				DED4E855298C9276002C542A /* PlayerStatsTable.swift in Sources */,

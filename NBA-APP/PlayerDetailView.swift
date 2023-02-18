@@ -120,14 +120,7 @@ struct PlayerDetailView: View {
             }
             .padding(20)
             .frame(maxWidth: .infinity)
-            
-            Button {
-                print("Following up")
-            } label: {
-                Image(systemName: "heart")
-                Text("Follow")
-            }
-            
+
             
             NewsSlider(label: "Player News", news: $news)
             Spacer()
