@@ -9,17 +9,17 @@ import Foundation
 
 struct News: Codable {
     let newsID: Int
-    let source, updated, timeAgo, title: String
-    let content: String
-    let url: String
-    let termsOfUse, author, categories: String
-    let playerID, teamID: Int
-    let team: String
+    let source, updated, timeAgo, title: String?
+    let content: String?
+    let url: String?
+    let termsOfUse, author, categories: String?
+    let playerID, teamID: Int?
+    let team: String?
     let playerID2: Int?
     let teamID2: Int?
     let team2: String?
-    let originalSource: String
-    let originalSourceURL: String
+    let originalSource: String?
+    let originalSourceURL: String?
 
     enum CodingKeys: String, CodingKey {
         case newsID = "NewsID"

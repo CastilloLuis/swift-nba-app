@@ -113,7 +113,8 @@ struct HomeView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .ignoresSafeArea()
+        .padding(.bottom, 50)
+        .background(.clear)
         .sheet(isPresented: $navigateToDetailView) {
             GameDetailView(gameId: $selectedGameId)
         }

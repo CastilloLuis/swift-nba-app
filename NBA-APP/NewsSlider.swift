@@ -38,7 +38,7 @@ struct NewsSlider: View {
                 TabView(selection: $selectedSlide) {
                     ForEach(Array(news.enumerated()), id: \.element.newsID) { index, _new in
                         VStack {
-                            Text(_new.title.uppercased())
+                            Text(_new.title?.uppercased() ?? "No Title")
                                 .customFont(.title)
                                 .foregroundColor(.white)
                                 .padding(.top, 65)
@@ -65,7 +65,7 @@ struct NewsSlider: View {
                             RoundedRectangle(cornerRadius: 25, style: .continuous)
                         )
                         .onTapGesture {
-                            webViewUrl = _new.url
+                            webViewUrl = _new.url ?? "https://google.com"
                             showWebView = true
                         }
                         .padding(.horizontal, 2)

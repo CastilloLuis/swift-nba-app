@@ -12,7 +12,7 @@ struct NBA_APPApp: App {
     var network = Network()
     var body: some Scene {
         WindowGroup {
-            TeamsListView()
+            MainView()
                 .environmentObject(network)
         }
     }

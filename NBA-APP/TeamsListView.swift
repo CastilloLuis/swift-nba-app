@@ -52,7 +52,11 @@ struct TeamsListView: View {
                 teams = teams.filter { team in
                     team.teamID != teamId
                 }
-                followingTeams.append(result[0])
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    withAnimation {
+                        followingTeams.append(result[0])
+                    }
+                }
             }
 
         }

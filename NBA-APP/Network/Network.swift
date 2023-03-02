@@ -193,7 +193,7 @@ class Network: ObservableObject {
                 return []
             }
             let decodedApiResponse = try JSONDecoder().decode([News].self, from: apiResponse)
-            
+
             news = decodedApiResponse
             
         } catch {
