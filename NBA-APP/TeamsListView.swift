@@ -126,7 +126,7 @@ struct TeamsListView: View {
                         } placeholder: {
                             //put your placeholder here
                         }
-                        .frame(width: .infinity, height: .infinity)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
                     .padding()
                     .position(x: 60, y: 50)
@@ -153,7 +153,7 @@ struct TeamsListView: View {
         }
         .scrollContentBackground(.hidden)
         .onAppear {
-            followingTeamsId = "[]"
+            filterFollowingTeams()
         }
     }
 }
