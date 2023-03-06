@@ -27,7 +27,6 @@ struct GameDetailView: View {
             let stats = await network.getGameStats(gameId: gameId!)
             selectedGame = game[0]
             selectedGameStats = stats
-            print(selectedGameStats)
             loading = false
         }
     }

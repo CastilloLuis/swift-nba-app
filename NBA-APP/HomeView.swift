@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SkeletonUI
 
 struct HomeView: View {
     @EnvironmentObject var network: Network
@@ -19,8 +20,8 @@ struct HomeView: View {
     @State var viewState = CGSize.zero
     @State var navigateToSearch: Bool = false
     @State var navigateToDetailView: Bool = false
+    @State var loading: Bool = false
     
-    // Add player of the day card flip animation
     func getLiveGames() async {
         let date = Date()
         let dateFormatter = DateFormatter()
@@ -56,20 +57,36 @@ struct HomeView: View {
                         }
                         .padding(.horizontal, 20)
                         .padding(.bottom, -20)
+                        
                         ScrollViewReader { scrollProxy in
                             ScrollView(.horizontal, showsIndicators: false) {
                                 LazyHStack(spacing: 20) {
-                                    ForEach(liveGames, id: \.id) { game in
-                                        LiveGameCard(statsViewOpened: false, game: game)
-                                            .id(game.id)
-                                            .onTapGesture {
-                                                withAnimation {
-                                                    selectedGameId = game.id
-                                                    navigateToDetailView = true
-                                                }
-                                            }
+                                    
+                                    if (loading) {
+                                        ForEach([1, 2, 3] as [Int], id: \.self) { _ in
+                                            Rectangle()
+                                                .skeleton(with: true)
+                                                .shape(type: .rectangle)
+                                                .multiline(lines: 1)
+                                                .animation(type: .pulse())
+                                                .frame(width: 300, height: 100)
+                                                .cornerRadius(25, corners: .allCorners)
+                                        }
                                     }
-                                    .padding(.vertical)
+                                    
+                                    if (!loading) {
+                                        ForEach(liveGames, id: \.id) { game in
+                                            LiveGameCard(statsViewOpened: false, game: game)
+                                                .id(game.id)
+                                                .onTapGesture {
+                                                    withAnimation {
+                                                        selectedGameId = game.id
+                                                        navigateToDetailView = true
+                                                    }
+                                                }
+                                        }
+                                        .padding(.vertical)
+                                    }
                                 }
                                 .padding()
                             }
@@ -80,10 +97,6 @@ struct HomeView: View {
                                     scrollProxy.scrollTo(id)
                                 }
                             }
-                            .task {
-//                                    await getLiveGames()
-//                                    await getLatestGames()
-                            }
                         }
                         .padding(.bottom, -20)
                         Text("Latest Games")
@@ -93,14 +106,44 @@ struct HomeView: View {
                             .padding(.bottom, -20)
                         ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack(spacing: 30) {
-                                ForEach(latestGames, id: \.id) { game in
-                                    RecentGameCard(game: game)
+                                
+                                if (loading) {
+                                    ForEach([1, 2, 3] as [Int], id: \.self) { _ in
+                                        Rectangle()
+                                            .skeleton(with: true)
+                                            .shape(type: .rectangle)
+                                            .multiline(lines: 1)
+                                            .animation(type: .pulse())
+                                            .frame(width: 250, height: 220)
+                                            .cornerRadius(25, corners: .allCorners)
+                                    }
                                 }
-                                .padding(.vertical)
+                                
+                                if (!loading) {
+                                    ForEach(latestGames, id: \.id) { game in
+                                        RecentGameCard(game: game)
+                                    }
+                                    .padding(.vertical)
+                                }
+                                
                             }.padding()
                         }
                         
-                        NewsSlider(news: $news)
+                        if (loading) {
+                            Rectangle()
+                                .skeleton(with: true)
+                                .shape(type: .rectangle)
+                                .multiline(lines: 1)
+                                .animation(type: .pulse())
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 250)
+                                .cornerRadius(25, corners: .allCorners)
+                                .padding()
+                        }
+                        
+                        if (!loading) {
+                            NewsSlider(news: $news)
+                        }
                         
                         Spacer()
                     }
@@ -108,8 +151,12 @@ struct HomeView: View {
                 }
             }
             .task {
+                loading = true
                 let nbaNews = await network.getNews()
                 news = nbaNews
+                await getLiveGames()
+                await getLatestGames()
+                loading = false
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

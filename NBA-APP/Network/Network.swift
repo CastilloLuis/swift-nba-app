@@ -100,7 +100,7 @@ class Network: ObservableObject {
     
     func getLastWeekHistoryGames() async -> [LiveGame] {
         var games: [LiveGame] = []
-        let dates = Date().getDates(forLastNDays: 7)
+        let dates = Date().getDates(forLastNDays: 2)
 
         await withTaskGroup(of: [LiveGame].self) { group in
             for date in dates {
@@ -138,18 +138,6 @@ class Network: ObservableObject {
         
         return gameStats
     }
-    
-    
-//    func getPlayersStatsPerGame(gameId: Int?) async -> Dictionary<String, Array<PlayerData>> {
-//
-//        let decodedApiResponse = getMockPlayers().filter { $0.pos != nil }
-//
-//        let groupByTeam = Dictionary(grouping: decodedApiResponse) { (player) -> String in
-//            return player.team.nickname ?? "-"
-//        }
-//
-//        return groupByTeam
-//    }
     
     func getPlayersStatsPerGame(gameId: Int) async -> [String : [PlayerData]] {
         var groupByTeam: [String : [PlayerData]] = [:]
@@ -203,9 +191,32 @@ class Network: ObservableObject {
         return news
     }
     
+    
+    
+    func getActivePlayers() async -> [PlayerSportsIo] {
+        var players: [PlayerSportsIo] = []
+        let urlRequest = getUrlRequestObject("/Players", sportsIoApi: true)
+        
+        do {
+            let apiResponse = try? await callApi(urlRequest: urlRequest, sportsIoApi: true)
+
+            guard let apiResponse = apiResponse else {
+                return []
+            }
+            
+            let decodedApiResponse = try JSONDecoder().decode([PlayerSportsIo].self, from: apiResponse)
+            
+            players = decodedApiResponse
+        } catch {
+            print("Error: ", error)
+        }
+        
+        return players
+    }
+    
 }
 
-// OLD WAY
+// DEPRECATED
 //    func callApi(urlRequest: URLRequest, completion: @escaping (ApiResponse?) -> ()) {
 //        var apiResponse = ApiResponse()
 //
