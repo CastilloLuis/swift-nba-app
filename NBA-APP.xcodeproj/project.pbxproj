@@ -26,6 +26,22 @@
 		DE1C4D61298AA85700EF9D70 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C4D60298AA85700EF9D70 /* Extensions.swift */; };
 		DE1C4D63298AAF6E00EF9D70 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C4D62298AAF6E00EF9D70 /* Mock.swift */; };
 		DE6DBBC229B018F000184BD9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6DBBC129B018F000184BD9 /* MainView.swift */; };
+		DE6DBBC829B6543000184BD9 /* ScoresAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6DBBC729B6543000184BD9 /* ScoresAttributes.swift */; };
+		DE6DBBEE29B65DDD00184BD9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6DBBCF29B65BDE00184BD9 /* WidgetKit.framework */; };
+		DE6DBBEF29B65DDD00184BD9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6DBBD129B65BDE00184BD9 /* SwiftUI.framework */; };
+		DE6DBBF229B65DDD00184BD9 /* GameWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6DBBF129B65DDD00184BD9 /* GameWidgetsBundle.swift */; };
+		DE6DBBF429B65DDD00184BD9 /* GameWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6DBBF329B65DDD00184BD9 /* GameWidgets.swift */; };
+		DE6DBBF629B65DDD00184BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE6DBBF529B65DDD00184BD9 /* Assets.xcassets */; };
+		DE6DBBFA29B65DDD00184BD9 /* GameWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = DE6DBBED29B65DDD00184BD9 /* GameWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DE6DBBFE29B65E3F00184BD9 /* ScoresAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6DBBC729B6543000184BD9 /* ScoresAttributes.swift */; };
+		DE6DBBFF29B6636800184BD9 /* GameStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED4E848298BE77A002C542A /* GameStats.swift */; };
+		DE6DBC0029B6672100184BD9 /* LiveGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113B35298958CD001F6BA3 /* LiveGame.swift */; };
+		DE6DBC0129B6672F00184BD9 /* JSONAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113B3729895931001F6BA3 /* JSONAny.swift */; };
+		DE6DBC0229B698E700184BD9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C4D60298AA85700EF9D70 /* Extensions.swift */; };
+		DE6DBC0329B6A89300184BD9 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE113B2A29893F1C001F6BA3 /* CustomFont.swift */; };
+		DE6DBC0429B6A90C00184BD9 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE113B2329893EB5001F6BA3 /* Inter-Regular.ttf */; };
+		DE6DBC0529B6A90F00184BD9 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE113B2429893EB5001F6BA3 /* Poppins-Bold.ttf */; };
+		DE6DBC0629B6A91100184BD9 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE113B2529893EB5001F6BA3 /* Inter-SemiBold.ttf */; };
 		DE719072298C95D4003B4502 /* MockPlayers.json in Resources */ = {isa = PBXBuildFile; fileRef = DE719071298C95D4003B4502 /* MockPlayers.json */; };
 		DE719075298CBC73003B4502 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = DE719074298CBC73003B4502 /* SkeletonUI */; };
 		DE719077298CBEB3003B4502 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE719076298CBEB3003B4502 /* Modifiers.swift */; };
@@ -50,6 +66,30 @@
 		DED4E857298C92E6002C542A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED4E856298C92E6002C542A /* Player.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DE6DBBF829B65DDD00184BD9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE113B0429888C17001F6BA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE6DBBEC29B65DDD00184BD9;
+			remoteInfo = GameWidgetsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DE6DBBE629B65BDE00184BD9 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DE6DBBFA29B65DDD00184BD9 /* GameWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		DE113B0C29888C17001F6BA3 /* NBA-APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NBA-APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE113B0F29888C17001F6BA3 /* NBA_APPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBA_APPApp.swift; sourceTree = "<group>"; };
@@ -72,6 +112,14 @@
 		DE1C4D60298AA85700EF9D70 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DE1C4D62298AAF6E00EF9D70 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		DE6DBBC129B018F000184BD9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		DE6DBBC729B6543000184BD9 /* ScoresAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresAttributes.swift; sourceTree = "<group>"; };
+		DE6DBBCF29B65BDE00184BD9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		DE6DBBD129B65BDE00184BD9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		DE6DBBED29B65DDD00184BD9 /* GameWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GameWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE6DBBF129B65DDD00184BD9 /* GameWidgetsBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWidgetsBundle.swift; sourceTree = "<group>"; };
+		DE6DBBF329B65DDD00184BD9 /* GameWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWidgets.swift; sourceTree = "<group>"; };
+		DE6DBBF529B65DDD00184BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE6DBBF729B65DDD00184BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE719071298C95D4003B4502 /* MockPlayers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockPlayers.json; sourceTree = "<group>"; };
 		DE719076298CBEB3003B4502 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		DE8A12682997FA7D00407659 /* GameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailView.swift; sourceTree = "<group>"; };
@@ -104,6 +152,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE6DBBEA29B65DDD00184BD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE6DBBEF29B65DDD00184BD9 /* SwiftUI.framework in Frameworks */,
+				DE6DBBEE29B65DDD00184BD9 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -111,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				DE113B0E29888C17001F6BA3 /* NBA-APP */,
+				DE6DBBF029B65DDD00184BD9 /* GameWidgets */,
+				DE6DBBCE29B65BDE00184BD9 /* Frameworks */,
 				DE113B0D29888C17001F6BA3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				DE113B0C29888C17001F6BA3 /* NBA-APP.app */,
+				DE6DBBED29B65DDD00184BD9 /* GameWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +188,7 @@
 			children = (
 				DE113B2929893EBF001F6BA3 /* Info.plist */,
 				DE113B0F29888C17001F6BA3 /* NBA_APPApp.swift */,
+				DE6DBBC729B6543000184BD9 /* ScoresAttributes.swift */,
 				DE113B1D29888C8E001F6BA3 /* Views */,
 				DE63C8CD298F159D006B92C9 /* Utils */,
 				DE113B3129894D32001F6BA3 /* Network */,
@@ -235,6 +296,26 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		DE6DBBCE29B65BDE00184BD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE6DBBCF29B65BDE00184BD9 /* WidgetKit.framework */,
+				DE6DBBD129B65BDE00184BD9 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE6DBBF029B65DDD00184BD9 /* GameWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				DE6DBBF129B65DDD00184BD9 /* GameWidgetsBundle.swift */,
+				DE6DBBF329B65DDD00184BD9 /* GameWidgets.swift */,
+				DE6DBBF529B65DDD00184BD9 /* Assets.xcassets */,
+				DE6DBBF729B65DDD00184BD9 /* Info.plist */,
+			);
+			path = GameWidgets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,10 +326,12 @@
 				DE113B0829888C17001F6BA3 /* Sources */,
 				DE113B0929888C17001F6BA3 /* Frameworks */,
 				DE113B0A29888C17001F6BA3 /* Resources */,
+				DE6DBBE629B65BDE00184BD9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DE6DBBF929B65DDD00184BD9 /* PBXTargetDependency */,
 			);
 			name = "NBA-APP";
 			packageProductDependencies = (
@@ -257,6 +340,23 @@
 			productName = "NBA-APP";
 			productReference = DE113B0C29888C17001F6BA3 /* NBA-APP.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DE6DBBEC29B65DDD00184BD9 /* GameWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE6DBBFB29B65DDE00184BD9 /* Build configuration list for PBXNativeTarget "GameWidgetsExtension" */;
+			buildPhases = (
+				DE6DBBE929B65DDD00184BD9 /* Sources */,
+				DE6DBBEA29B65DDD00184BD9 /* Frameworks */,
+				DE6DBBEB29B65DDD00184BD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GameWidgetsExtension;
+			productName = GameWidgetsExtension;
+			productReference = DE6DBBED29B65DDD00184BD9 /* GameWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -269,6 +369,9 @@
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					DE113B0B29888C17001F6BA3 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					DE6DBBEC29B65DDD00184BD9 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -290,6 +393,7 @@
 			projectRoot = "";
 			targets = (
 				DE113B0B29888C17001F6BA3 /* NBA-APP */,
+				DE6DBBEC29B65DDD00184BD9 /* GameWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -310,6 +414,17 @@
 				DE113B2729893EB5001F6BA3 /* Poppins-Bold.ttf in Resources */,
 				DED4E851298C5E25002C542A /* MockStats.json in Resources */,
 				DED4E847298AC77A002C542A /* MockData.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE6DBBEB29B65DDD00184BD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE6DBC0629B6A91100184BD9 /* Inter-SemiBold.ttf in Resources */,
+				DE6DBC0429B6A90C00184BD9 /* Inter-Regular.ttf in Resources */,
+				DE6DBC0529B6A90F00184BD9 /* Poppins-Bold.ttf in Resources */,
+				DE6DBBF629B65DDD00184BD9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +455,7 @@
 				DE8A12692997FA7D00407659 /* GameDetailView.swift in Sources */,
 				DEADD35D29914EA200999C2C /* SearchPlayerView.swift in Sources */,
 				DE113B3029894B5E001F6BA3 /* LiveGameCard.swift in Sources */,
+				DE6DBBC829B6543000184BD9 /* ScoresAttributes.swift in Sources */,
 				DED4E849298BE77A002C542A /* GameStats.swift in Sources */,
 				DEADD3752992943A00999C2C /* Team.swift in Sources */,
 				DE1C4D61298AA85700EF9D70 /* Extensions.swift in Sources */,
@@ -352,7 +468,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DE6DBBE929B65DDD00184BD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE6DBC0129B6672F00184BD9 /* JSONAny.swift in Sources */,
+				DE6DBBF229B65DDD00184BD9 /* GameWidgetsBundle.swift in Sources */,
+				DE6DBC0029B6672100184BD9 /* LiveGame.swift in Sources */,
+				DE6DBBFE29B65E3F00184BD9 /* ScoresAttributes.swift in Sources */,
+				DE6DBBF429B65DDD00184BD9 /* GameWidgets.swift in Sources */,
+				DE6DBC0329B6A89300184BD9 /* CustomFont.swift in Sources */,
+				DE6DBBFF29B6636800184BD9 /* GameStats.swift in Sources */,
+				DE6DBC0229B698E700184BD9 /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE6DBBF929B65DDD00184BD9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE6DBBEC29B65DDD00184BD9 /* GameWidgetsExtension */;
+			targetProxy = DE6DBBF829B65DDD00184BD9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DE113B1829888C18001F6BA3 /* Debug */ = {
@@ -472,6 +611,7 @@
 		DE113B1B29888C18001F6BA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -481,6 +621,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NBA-APP/Info.plist";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -502,6 +643,7 @@
 		DE113B1C29888C18001F6BA3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -511,6 +653,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "NBA-APP/Info.plist";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -523,6 +666,60 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "iluiscastillo.NBA-APP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE6DBBFC29B65DDE00184BD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 69GR7739PH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GameWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GameWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "iluiscastillo.NBA-APP.GameWidgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE6DBBFD29B65DDE00184BD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 69GR7739PH;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GameWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GameWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "iluiscastillo.NBA-APP.GameWidgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -546,6 +743,15 @@
 			buildConfigurations = (
 				DE113B1B29888C18001F6BA3 /* Debug */,
 				DE113B1C29888C18001F6BA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE6DBBFB29B65DDE00184BD9 /* Build configuration list for PBXNativeTarget "GameWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE6DBBFC29B65DDE00184BD9 /* Debug */,
+				DE6DBBFD29B65DDE00184BD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -124,7 +124,7 @@ extension View {
     }
 }
 
-extension String{
+extension String {
      func toCurrencyFormat() -> String {
         if let intValue = Int(self) {
            let numberFormatter = NumberFormatter()
@@ -144,5 +144,18 @@ extension String{
             dateFormatter.dateStyle = .long
             dateFormatter.timeStyle = .none
         return dateFormatter.string(from: formattedBirthdayDate)
+    }
+    
+    var imageFromBase64: UIImage? {
+        guard let imageData = Data(base64Encoded: self, options: .ignoreUnknownCharacters) else {
+            return nil
+        }
+        return UIImage(data: imageData)
+    }
+}
+
+extension UIImage {
+    var base64: String? {
+        self.jpegData(compressionQuality: 1)?.base64EncodedString()
     }
 }

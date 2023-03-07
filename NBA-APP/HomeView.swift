@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SkeletonUI
+import ActivityKit
 
 struct HomeView: View {
     @EnvironmentObject var network: Network
@@ -25,7 +26,7 @@ struct HomeView: View {
     func getLiveGames() async {
         let date = Date()
         let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         let response = await network.getGames(date: dateFormatter.string(from: date))
         liveGames = response
     }
@@ -152,10 +153,10 @@ struct HomeView: View {
             }
             .task {
                 loading = true
-                let nbaNews = await network.getNews()
-                news = nbaNews
-                await getLiveGames()
-                await getLatestGames()
+//                let nbaNews = await network.getNews()
+//                news = nbaNews
+//                await getLiveGames()
+//                await getLatestGames()
                 loading = false
             }
         }
