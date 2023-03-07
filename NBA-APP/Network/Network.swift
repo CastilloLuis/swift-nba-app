@@ -16,9 +16,13 @@ class Network: ObservableObject {
         guard let url = URL(string: sportsIoApi ? API_URL_SPORTSIO + "\(pathname)" : API_URL + "\(pathname)") else { fatalError("Missing URL") }
         var urlRequest = URLRequest(url: url)
         if (sportsIoApi) {
-            urlRequest.setValue("205ac79f2c6540d89722f000faec61d7", forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
+            if let apiKey = ProcessInfo.processInfo.environment["SPORTS_API_KEY"] {
+                urlRequest.setValue(apiKey, forHTTPHeaderField: "Ocp-Apim-Subscription-Key")
+            }
         } else {
-            urlRequest.setValue("abbdf8f6aamsh109476df4d902a9p165517jsn1f70d6610950", forHTTPHeaderField: "X-RapidAPI-Key")
+            if let apiKey = ProcessInfo.processInfo.environment["RAPID_API_KEY"] {
+                urlRequest.setValue(apiKey, forHTTPHeaderField: "X-RapidAPI-Key")
+            }
         }
 
         return urlRequest

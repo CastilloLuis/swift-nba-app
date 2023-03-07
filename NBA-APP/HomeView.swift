@@ -153,10 +153,10 @@ struct HomeView: View {
             }
             .task {
                 loading = true
-//                let nbaNews = await network.getNews()
-//                news = nbaNews
+                let nbaNews = await network.getNews()
+                news = nbaNews
 //                await getLiveGames()
-//                await getLatestGames()
+                await getLatestGames()
                 loading = false
             }
         }
