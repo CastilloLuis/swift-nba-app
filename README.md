@@ -1,7 +1,7 @@
 # NBA App
 
 ## Description
-I decided to learn swift in my free time, so I went through the Apple Docs and started coding, interacting with different APIs, building layouts with Swift UI and the hottest topic: Integrating dynamic Island and Widgets.
+I decided to learn swift in my free time, so I went through the Apple Docs and started coding, interacting with different APIs, web views, building layouts with Swift UI and the hottest topic: Integrating dynamic Island and Widgets.
 
 Hours Spent: ~20h in total
 
